@@ -1,0 +1,450 @@
+\documentclass[12pt,a4paper]{article}
+
+% Paquetes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx} % Ángulos
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{minted}  % Códigos
+\usepackage{gensymb} % Grados: "°"
+\graphicspath{{Figuras/}}
+\onehalfspacing
+
+
+% Datos
+\author{Nombre y Apellido \\ Legajo: XXXXX}
+\date{\today}
+
+\begin{document}
+
+% Carátula personalizada
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.25\textwidth]{escudo.png} 
+    \hspace{1cm}
+    \includegraphics[width=0.3\textwidth]{download.png} \\[1cm]
+
+    {\large \textbf{UNIVERSIDAD NACIONAL DE CÓRDOBA} \\[0.5cm]}
+    {\large \textbf {FACULTAD DE CIENCIAS EXACTAS, FÍSICAS Y NATURALES} \\[1cm]}
+    {\Large ELECTRÓNICA INDUSTRIAL \\[1cm]}
+
+    \rule{\textwidth}{0.5pt} \\[0.5cm]
+    {\Large \textbf{Trabajo Práctico Teórico N°8} \\[0.3cm]}
+    {\Large \textbf{Tiristores con Carga RLE y TCA785} \\[0.3cm]}
+    \rule{\textwidth}{0.5pt} \\[1cm]
+
+\begin{tabular}{l l}
+\textbf{Profesor Titular:} & Ing. Agüero Adrián.\\
+\textbf{Profesor Adjunto:} & Ing. Gangi O. Sergio.\\
+\textbf{Profesor Adjunto:} & Ing. Laboret Sergio.\\
+
+\\
+\textbf{Alumno:} Monja, Ernesto Joaquín. \\
+\textbf{DNI:} 43.873.728 \\
+\end{tabular}\\[3cm]
+
+{\centering Año 2026 \par}
+
+\end{titlepage}
+
+
+
+% Índice
+\tableofcontents
+\newpage
+\indent
+
+
+
+\section{Introducción}
+En este trabajo práctico se busca profundizar un poco más sobre los circuitos con tiristores y la introducción de cargas inductivas a la rectificación. Se buscó comprender el funcionamiento del circuito, elegir componentes de acuerdo a los datos y simularlo para verificar su correcto funcionamiento.
+
+
+
+\section{Desarrollo}
+\subsection{Circuito Rectificador Monofásico Controlado}
+\subsubsection{Análisis Funcional y Formas de Onda del Circuito}
+El circuito al que realizaremos el estudio es el que se presenta en la siguiente figura:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Figura 1.png}
+    \caption{Simulación del circuito rectificador monofásico controlado.}
+    \label{fig:fig_1}
+\end{figure}
+
+El circuito planteado en la Figura \eqref{fig:fig_1}, consiste en un rectificador monofásico totalmente controlado por tiristores, para el cual se presenta a continuación una explicación sobre que hace cada parte del circuito y como se determinaron sus valores:
+\begin{itemize}
+    \item \textbf{\underline{Tensión de Alimentación ($V_{P}$):}} Cómo indica la consigna, la tensión del primario es la tensión de la red alterna la cual se caracteriza por tener una: $V_{P(rms)} = 200 \ [V]$ (y por lo tanto se tiene que: $V_{P(max)} = \sqrt{2} V_{P(rms)} \approx 311.12 \ [V]$) y una $f = 50 \ [Hz]$ los cuales fueron introducidos en el simulador.
+    
+    \item \textbf{\underline{Transformador:}} Como ya se ha explorado en Trabajos Prácticos anteriores, la relación de transformación de un transformador se define en LTSpice de acuerdo al valor de las inductancias y en este caso se tiene que, y siguiendo la consigna planteada: que este transformador reduzca la tensión de $V_{P(rms)} = 220 \ [V]$ a una tensión de por ejemplo: $V_{S(rms)} = 24 \ [V]$. Se tiene entonces que la relación de transformación estará dada por:
+        \begin{equation}
+            k = \frac{V_{S(rms)}}{V_{P(rms)}} = \sqrt{\frac{L_{S}}{L_{P}}}
+            \label{eq_1}
+        \end{equation}
+        
+        Por lo tanto se deduce que:
+        \begin{equation}
+            L_{P} = \left(\frac{V_{P(rms)}}{V_{S(rms)}}\right)^{2} L_{S} = \left(\frac{220}{24}\right)^{2} L_{S} \longrightarrow L_{P} \approx 84 L_{S}
+            \label{eq_2}
+        \end{equation}
+
+        Por lo tanto, dada la frecuencia de $f = 50 \ [Hz]$, se elije que $L_{S} = 1 \ [\mu Hy]$ de modo que $L_{P} = 84 \ [\mu Hy]$. Se define también que la resistencia interna de los bobinados del transformador será de: $1 \ [m\Omega]$ para evitar problemas en la simulación.
+
+    \item \textbf{\underline{Tiristores:}} Tal como se analizó en el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT6%20%20%20-%20Tiristores/Monja.TPT6.EI2026.pdf}{Trabajo Práctico N°6}, dado que el simulador LTSpice no incluye con un modelo nativo de simulación del SCR, se recurrió a un modelo del mismo en internet que presenta los siguientes parámetros:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{Figura 2.png}
+        \caption{Parámetros del SCR elegido para la Simulación [1].}
+        \label{fig:fig_2}
+    \end{figure}
+
+    Las fuentes que se conectan a los SCRs, fueron configuradas para un ángulo de disparo de $\alpha_{i} = 60 \ [\degree]$.
+
+    \item \textbf{\underline{Diodo Volante ($D_{1}$):}} El diodo $D_{1}$, se lo conoce como Diodo Volante y se trata de un componente semiconductor colocado en paralelo con cargas inductivas (como relés, motores o solenoides) para proteger los circuitos de conmutación de los picos de voltaje peligrosos [2]. Su función principal es proporcionar un camino de descarga alternativo para la energía que almacenó la bobina ($L$) durante el semiciclo activo.
+
+    Tal como se ha estudiado en el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT2%20%20%20-%20Diodos%20de%20Potencia/Monja.TPT2.EI2026.pdf}{Trabajo Práctico N°2}, la selección de diodos se realiza fundamentalmente en base a dos valores: $I_{F(AV)}$ y la $V_{RRM}$. La limitación en esta aplicación va a ser la corriente que atraviesa el diodo cuando conduce (véase la Figura \eqref{fig:fig_4} en color azul para la corriente), por lo tanto se opto por el diodo 1N4007 para el cual se tienen los siguientes valores según su hoja de datos:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{Figura 3.png}        \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/1934502/ONSEMI/1N4007.html}{Hoja de datos del 1N4007.} [3]}
+        \label{fig:fig_3}
+    \end{figure}
+
+    \item \textbf{\underline{Carga ($R$ y $L$):}} Los valores de estos componentes se fijaron para facilitar la simulación del circuito. El valor de la resistencia $R$ se fijo en $10 \ [\Omega]$, para fijar la escala de corriente a valores realistas para este tipo de circuitos mientras que el valor de la inductancia $L$ se fijó a $10 \ [mHy]$ para que junto a la resistencia, den una constante de tiempo para un circuito $RL$ igual a:
+    \begin{equation}
+        \tau = \frac{L}{R} = \frac{10 \ [mHy]}{10 \ [\Omega]} = 1 \ [ms]
+        \label{eq_3}
+    \end{equation}
+
+    Dada la alimentación de $f = 50 \ [Hz]$ la cual tiene un periodo de $T = 20 \ [ms]$, se tiene que la red $RL$ cargará al inductor en un tiempo de $5 \tau = 5 \ [ms]$, por lo que la elección del inductor es razonable en el contexto de la frecuencia de trabajo.
+\end{itemize}
+
+Con el análisis realizado del circuito, se propone ver las formas de onda de la tensión sobre la carga, es decir sobre $R$ y $L$ (en verde) y la corriente sobre la carga (en azul):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figura 4.png}
+    \caption{Formas de onda de tensión y corriente sobre la carga.}
+    \label{fig:fig_4}
+\end{figure}
+
+Nótese que al compartir el mismo nodo, la tensión sobre diodo $D_{1}$ es la misma que para el mostrado en la Figura \eqref{fig:fig_4}, pero la corriente a través del diodo se presenta en la siguiente figura:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figura 5.png}
+    \caption{Formas de onda de la corriente sobre el diodo.}
+    \label{fig:fig_5}
+\end{figure}
+
+Se verifica entonces la correcta selección del diodo ya que los picos de corriente no superan los mencionados según la hoja de datos del diodo. Por último, veamos entonces las formas de onda de las tensiones $V_{GK}$ de los tiristores 1 y 2 (en color azul oscuro y verde agua respectivamente) y las tensiones $V_{AK}$ de los tiristores 1 y 2 también (ahora en rojo y verde fluor respectivamente):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figura 6.png}
+    \caption{Formas de onda de las tensiones $V_{GK}$ y $V_{AK}$ sobre los tiristores.}
+    \label{fig:fig_6}
+\end{figure}
+
+
+\subsubsection{Conclusiones Parciales}
+Como se ha demostrado en la sección precedente, se ha logrado simular con éxito el circuito rectificador monofásico controlado presentado en la consigna, donde se determinaron la funcionalidad y valores específicos de cada componente en conjunto con la elección del diodo y del tiristor utilizados.
+
+El funcionamiento del circuito se verifica observando las formas de onda presentadas y por lo tanto queda concluida esta primera parte de este Trabajo Práctico.
+
+
+
+\subsection{Circuito Trifásico Controlado con Motor de CC como Carga}
+\subsubsection{Circuito de Potencia}
+La consigna plantea utilizar el Circuito Trifásico Controlado desarrollado en la segunda parte del \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT7%20%20%20-%20Circuito%20de%20Disparo%20para%20Tiristores/Monja.TPT7.EI2026.pdf}{Trabajo Práctico N°7} pero modificando el valor de la carga, para que pase de ser una simple resistencia a un motor de CC con las siguientes especificaciones:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figura 7.png}
+    \caption{Especificaciones del motor de CC.}
+    \label{fig:fig_7}
+\end{figure}
+
+La modificación de la carga, conlleva revisar el modelo matemáico del motor de CC para definir correctamente los parámetros para seleccionar los componentes. El modelado matemático-circuital de un motor de CC se presenta en la siguiente figura:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\linewidth]{Figura 8.png}
+    \caption{Modelo matemático del motor de CC. [4]}
+    \label{fig:fig_8}
+\end{figure}
+
+Aquí, se tiene que $R_{m}$ es la resistencia del bobinado, $L_{a}$ es la inductancia de la armadura y $E_{cem}$ es la fuerza contraelectromotriz necesaria para permitir que el motor comience a girar. Si bien existe una caída de tensión en las escobillas del motor, esta se desprecia para nuestro análisis [4] y por lo tanto, se tiene que planteando la malla, se deduce que:
+\begin{equation}
+    V_{n} = E_{cem} + I_{n}R_{m}
+    \label{eq_4}
+\end{equation}
+
+Nótese que todos los valores a excepción de $E_{cem}$ son datos y están dados desde la Figura \eqref{fig:fig_7}, por lo tanto si se despeja $E_{cem}$ se llega a:
+\begin{equation}
+    E_{cem} = V_{n} - I_{n}R_{m} = 170 - 4.5(2.5) \approx 158.75 \ [V]
+    \label{eq_5}
+\end{equation}
+
+Por lo tanto, resulta que la carga a conectar en el rectificador será la siguiente:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Figura 9.png}
+    \caption{Simulación del rectificador trifásico controlado con motor de CC como carga.}
+    \label{fig:fig_9}
+\end{figure}
+
+Lo primero que se debe notar, es que las fuentes de tensión son de la red, con una $V_{(rms)} = 220 \ [V]$ y por lo tanto: $V_{(max)} = 311.12 \ [V]$; y con una $f = 50 \ [Hz]$. Luego, en cuanto a la selección de los tiristores, dado que se pide explícitamente \textbf{NO} utilizar el Método de Puchlowsky, se recurre a considerar la carga como una resistencia pura y por lo tanto, se define a la corriente media a través del tiristor ($I_{T(AV)}$) como un tercio de la que consume el motor, es decir:
+\begin{equation}
+    I_{T(AV)} = \frac{I_{n}}{3} = \frac{4.5}{3} = 1.5 \ [A]
+    \label{eq_6}
+\end{equation}
+
+Por otro lado, la tensión de pico inversa sera la tensión pico de la red (asumiendo que el conexionado mostrado en la Figura \eqref{fig:fig_9}), y por lo tanto, los tiristores se deben elegir para una $V_{RRM} = 311.12 \ [V]$.
+
+Para facilitar la selección, se recurrió nuevamente al mismo modelo de tiristor utilizado en la sección precedente el cual según la Figura \eqref{fig:fig_2}, se caracteriza por soportar una: $V_{RRM} = 400 \ [V]$ y una: $I_{T(AV)} = 24 \ [A]$, siendo estos valores aceptables para la aplicación
+
+
+
+\subsubsection{Circuito de Disparo con un TCA785}
+El chip elegido para comandar el disparo de los tiristores es el TCA785 el cual detecta cuándo una onda de tensión pasa por cero y espera un tiempo determinado (un ángulo de disparo) para mandar un pulso que active los SCRs deseados. Nótese que este solo permite comandar hasta un máximo de 2 elementos de potencia pero en esta aplicación, dado que contamos con 6 elementos de potencia (los 6 SCRs), se requerirán 3 integrados para comandar el disparo. A continuación, se presenta un diagrama esquemático del integrado en cuestión:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Figura 10.png}
+    \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}{Hoja de Datos del TCA785.} [5]}
+    \label{fig:fig_10}
+\end{figure}
+
+Para no extender demasiado este informe, se explicará unicamente los cálculos de diseño para 1 de los 3 TCA785 que se deben incorporar, ya que en lo único que difieren es en el conexionado del pin de sincronismo (el cual se debe sincronizar a su respectiva fase). Se propone detallar en la siguiente lista el análisis y selección de componentes para estos pines:
+\begin{itemize}
+    \item \textbf{\underline{Pin 5 ($V_{Sync}$):}} El pin de Sync se conecta a la fase correspondiente (en este caso: $V_1$) a través de una resistencia de alto valor. Su función es detectar el cruce por cero para resetear la rampa. 
+    
+    Nótese que si bien no se explicita en la hoja de datos, se debe limitar la corriente de entrada al integrado a no mas de $200 \ [\mu A]$. Por lo tanto, se debe introducir una resistencia de alto valor igual a:
+    \begin{equation}
+        R_{Sync} = \frac{V_{max}}{200 \ [\mu A]} = \frac{311.12}{200x10^{-6}} \approx 1.55 \ [M\Omega]
+        \label{eq_7}
+    \end{equation}
+    
+
+    \item \textbf{\underline{Pin 11 ($V_{cont}$):}} Con este pin, se le introduce un valor de continua que determina el angulo de disparo del tiristor. Para determinar este valor de continua, se debe plantear la integral que define el valor medio de tensión en la carga y para ello partiremos de la definición:
+    \begin{equation}
+        V_{L(AV)} = \frac{1}{T} \int_{0}^{T} v_{L}(t) dt
+        \label{eq_8}
+    \end{equation}
+    
+    En este caso, realizando los reemplazos adecuados a un angulo de conducción $\alpha_{i}$, se deduce que:
+    \begin{equation}
+        V_{L(AV)} = \frac{1}{\frac{2\pi}{6}} \int_{-\frac{\pi}{6} + \alpha_{i}}^{\frac{\pi}{6} + \alpha_{i}} \sqrt{3} V_{(max)} \cos(\theta) d\theta
+        \label{eq_9}
+    \end{equation}
+    \begin{equation}
+        V_{L(AV)} = \frac{6\sqrt{3}}{2\pi} V_{(max)} \left[\sin(\theta)\right]_{-\frac{\pi}{6} + \alpha_{i}}^{\frac{\pi}{6} + \alpha_{i}}
+        \label{eq_10}
+    \end{equation}
+    \begin{equation}
+        V_{L(AV)} = \frac{3\sqrt{3}}{\pi} V_{(max)} \left[\sin(\frac{\pi}{6} + \alpha_{i}) - \sin(-\frac{\pi}{6} + \alpha_{i})\right]
+        \label{eq_11}
+    \end{equation}
+    
+    Si aplicamos la identidad de resta de senos: $\sin(A) - \sin(B) = 2 \cos\left(\frac{A+B}{2}\right) \sin\left(\frac{A-B}{2}\right)$ a la ecuación \eqref{eq_11}, se tiene que:
+    \begin{equation}
+        \sin(\frac{\pi}{6} + \alpha_{i}) - \sin(-\frac{\pi}{6} + \alpha_{i}) =2\cos(\alpha_{i}) \sin\left(\frac{\pi}{6}\right) = 2 \cos(\alpha_{i}) \left(\frac{1}{2}\right) = \cos(\alpha_{i})
+        \label{eq_12}
+    \end{equation}
+    
+    Por lo tanto, reemplazando \eqref{eq_12} en \eqref{eq_11} se tiene que:
+    \begin{equation}
+        V_{L(AV)} = \frac{3\sqrt{3}}{\pi} V_{(max)} \cos(\alpha_{i})
+        \label{eq_13}
+    \end{equation}
+
+    Nótese que este desarrollo es exactamente el mismo que el realizado para el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT7%20%20%20-%20Circuito%20de%20Disparo%20para%20Tiristores/Monja.TPT7.EI2026.pdf}{Trabajo Práctico N°7}. Luego, sabiendo el valor de la expresión que define a $V_{L(AV)}$, se puede reemplazar por $V_{n}$ en \eqref{eq_4}, de modo que:
+    \begin{equation}
+        \frac{3\sqrt{3}}{\pi} V_{(max)} \cos(\alpha_{i}) = E_{cem} + I_{n}R_{m}
+        \label{eq_14}
+    \end{equation}
+
+    Dado que todos los valores son datos, excepto $\alpha_{i}$, se puede despejar la misma para obtener el angulo de ignición deseado que nos permite arrancar este motor:
+    \begin{equation}
+        \cos(\alpha_{i}) = \frac{\pi (E_{cem} + I_{n}R_{m})}{3\sqrt{3} V_{max}}
+        \label{eq_15}
+    \end{equation}
+    \begin{equation}
+        \alpha_{i} = \arccos\left(\frac{\pi (E_{cem} + I_{n}R_{m})}{3\sqrt{3} V_{max}}\right) \approx 70.7 \ [\degree]
+        \label{eq_16}
+    \end{equation}
+
+    Luego, se tiene que este angulo es una cierta proporción de los $180 \ [\degree]$ que se pueden controlar del tiristor y por lo tanto, se define a la tensión de control como:
+    \begin{equation}
+        V_{cont} = \frac{\alpha_i}{180} V_{ref}
+        \label{eq_17}
+    \end{equation}
+
+    El valor de $V_{ref}$, se fija de acuerdo a la hoja de datos del TCA785:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{Figura 11.png}
+        \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}{Hoja de Datos del TCA785.} [5]}
+        \label{fig:fig_11}
+    \end{figure}
+    
+    De modo que si fijamos a $V_{ref} = 3 \ [V]$ lo cual se encuentra dentro del rango especificado del fabricante, entonces se tiene que:
+    \begin{equation}
+        V_{cont} = \frac{70.7}{180}(3) \approx 1.178 \ [V]
+        \label{eq_18}
+    \end{equation}
+
+
+    \item \textbf{\underline{Pines 14 y 15 ($Q_{1}$ y $Q_{2}$):}} Esos pines se corresponden a cada par de compuertas que deben accionar cada uno de los 3 TCA785, donde se siguió el siguiente esquema de conexión:
+    \begin{itemize}
+        \item TCA1: Sincronizado con $V_{1}$ $\rightarrow$ Dispara U1 ($Q_{1}$) y U4 ($Q_{2}$).
+        \item TCA2: Sincronizado con $V_{2}$ $\rightarrow$ Dispara U2 ($Q_{1}$) y U5 ($Q_{2}$).
+        \item TCA3: Sincronizado con $V_{3}$ $\rightarrow$ Dispara U3 ($Q_{1}$) y U6 ($Q_{2}$).
+    \end{itemize}
+
+
+    \item \textbf{\underline{Pines 9 y 10 ($R_{i}$ y $C_{a}$):}} Estos dos componentes definen la pendiente de la rampa de tensión que el integrado compara con $V_{cont}$ para decidir cuándo disparar. La hoja de datos del TCA785 suele denominar a $R_{i}$ como $R_{9}$ y a $C_{a}$ como $C_{10}$.
+    
+    Dada la función rectificadora completa de los tiristores, la rampa debe cubrir exactamente un semiciclo de la red ($180 \ [\degree]$), por lo que si $f = 50 \ [Hz]$, un semiciclo durará $10 \ [ms]$. Luego, el fabricante provee las siguientes formulas para obtener estos generadores de rampa: 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{Figura 12.png}
+        \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}{Hoja de Datos del TCA785.} [5]}
+        \label{fig:fig_12}
+    \end{figure}
+
+    Por lo tanto, se deduce que si elegimos que:
+    \begin{itemize}
+        \item $C_{10} = C_{a} = 200 \ [nF]$ la cual se encuentra dentro del rango establecido según la Figura \eqref{fig:fig_12}. 
+        \item $V_{11} = 12 \ [V]$ siendo esta la tensión de control, la cual debe respetar el límite impuesto por el fabricante de: $V_{11} < V_{S} - 2 \ [V]$ siendo $V_{S} = V_{CC} = 15 \ [V]$.
+        \item $K = 1.10 \pm 20 [\%]$ y $V_{ref} = 3 \ [V]$ según \eqref{eq_18}
+        \item Un tiempo de rampa dado por:
+        \begin{equation}
+            t_{\alpha} = \frac{\alpha_{i}}{360 \ [\degree]} \frac{1}{f} = \frac{70.7}{360(50)} \approx 3.927 \ [ms]
+            \label{eq_19}
+        \end{equation}
+    \end{itemize}
+    
+    Entonces la resistencia de carga deberá ser igual a:
+    \begin{equation}
+        R_{i} = R_{9} = \frac{t_{\alpha}V_{ref} K}{V_{11} C_{10}} = \frac{3.927x10^{-3} (3) (1.1)}{12 (200x10^{-9})} \approx 5399.62 \ [\Omega]
+        \label{eq_20}
+    \end{equation}
+
+
+    \item \textbf{\underline{Pin 12 ($C_{b}$):}} Este componente determina cuánto tiempo se mantiene $"$encendido$"$ el pulso en la compuerta del tiristor y se corresponde al capacitor $C_{12}$ según la hoja de datos. El ancho del pulso ($t_p$) se calcula como: 
+    \begin{equation}
+        t_p \approx \frac{C_{12} \cdot 130 \ [\mu s]}{1 \ [nF]}
+        \label{eq_21}
+    \end{equation}
+
+    Nótese que para cargas resistivas puras con un pulso corto alcanza, sin embargo dado que se busca comandar un motor de CC, el cual tiene una parte inductiva, la corriente no sube instantáneamente. Si el pulso de disparo es más corto que el tiempo que tarda la corriente en alcanzar la corriente de enganche (Latching Current) del tiristor, el SCR se apagará apenas termine el pulso.
+
+    Por lo tanto, un capacitor de: $C_{12} = 2 \ [nF]$, generará un pulso de aproximadamente $260 \ [\mu s]$ el cual es un valor seguro para asegurar que el tiristor $"$enganche$"$ y pueda proporcionarle potencia la inductor.
+\end{itemize}
+
+Nótese que la complejidad de la selección de componentes para esta sección fue bastante superficial, ya que si bien estos parámetros elegidos permiten generar un disparo de 2 tiristores para comandar al motor, en la práctica y siguiendo la hoja de datos, el circuito que recomienda el fabricante es el siguiente:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Figura 13.png}
+    \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}{Hoja de Datos del TCA785.} [5]}
+    \label{fig:fig_13}
+\end{figure}
+
+Como es de observarse, el circuito de la Figura \eqref{fig:fig_13} es bastante más extenso del que se viene desarrollando en esta sección, de modo que si nos pusieramos a analizarlo, explicar sus componentes y simularlo, este desarrollo sobrepasaría los límites y objetivos previstos para este trabajo práctico, donde recuerde además que el circuito de la Figura \eqref{fig:fig_13} consiste del comando de un único par de tiristores, por lo que este debería ser repetido 3 veces más para satisfacer una simulación correcta de este circuito la cual, nuevamente, excede el propósito del trabajo.
+
+Sin embargo, si clickea sobre la siguiente palabra: \href{https://www.youtube.com/watch?v=bu9NAIpbC_0&t=69s}{¡Link!}, encontrará un video detallado sobre un circuito similar al planteado en la consigna, en el cual se realizó una simulación en Proteus del mismo. [6]
+
+Por otro lado, si se desea implementar tal simulación en un software como LTSpice, dado que este último no cuenta con un modelo nativo del TCA785, se puede tomar el siguiente modelo encontrado en internet [7] el cual se presenta a continuación:
+\begin{minted}[linenos]{bash}
+* Modelo TCA785 corregido para LTspice 24 por Monja Ernesto Joaquín.
+.SUBCKT TCA785 Q1 Q2 nQ1 nQ2 Z U Inh Sync Vcont VCC GND
++ PARAMS: pCb=2000p pCa=500p pRi=200k pExt12=0 pExt13=0
+
+* Redes internas
+Ca 51 GND {pCa} IC=0
+Cb 54 GND {(((pCb/2)+30)*1E-6)/69} IC=0
+Cd 71 72 150nF
+Cx 55 GND 300nF IC=1
+Rc 54 55 100
+Rx1 53 GND 200
+Rx2 53 55 200
+Rx3 72 74 100
+Rin 53 54 1MEG
+Rf1 Inh GND 1K
+Rf2 Sync GND 1K
+Rf3 Vcont GND 1K
+Rf4 VCC GND 1K
+
+Da 72 53 IDEAL
+Dc 55 GND IDEAL
+Dd GND 55 IDEAL
+Sa 51 GND 52 GND SWITCH1
+Sb 54 GND 55 GND SWITCH2
+VA 74 GND SIN(-0.5 1m 1k)
+
+* Lógica de Control (Uso de sintaxis table() nativa de LTspice)
+Gi GND 51 VALUE={3.41/pRi}
+Ec 52 GND V=table(V(Sync), -20,1, -50u,1, -20u,0, 20u,0, 50u,1, 20,1)
+Ec2 69 GND V=table(V(Sync), -20,0, 0,0, 10u,1, 20,1)
+Ec1 71 GND V=table((V(51)-V(Vcont))*500*
++((2*pRi*pCa*15)/3.41), -20,0, 0,0, 0.1,5, 20,5)
+Einh 70 GND V=table(V(Inh), -20,0, 2.5,0, 3.3,1, 20,1)
+Ec3 75 0 V=table(V(55), -10,-1, -0.5,-1, 0.5,1, 10,1)
+Ga GND 55 53 54 200
+
+* Ecuaciones de Salida
+Eq15 Q1 GND VALUE={V(69)*(V(VCC)-2.5)*V(70)*((((V(75)+1)/2)*(1-pExt12))
++((V(71)/5)*pExt12))}
+Eq14 Q2 GND VALUE={(1-V(69))*(V(VCC)-2.5)*V(70)*(((V(75)+1)*(1-pExt12)/2)
++((V(71)/5)*pExt12))}
+Eq2 nQ1 GND VALUE={(V(VCC)-2.5)*V(70)*(((1-((V(69)/2)*(V(75)+1)))*(1-pExt13))
++((1-(V(69)*(V(71)/5)))*pExt13))}
+Eq4 nQ2 GND VALUE={(V(VCC)-2.5)*V(70)*(((1-(((1-V(69))/2)*(V(75)+1)))*(1-pExt13))
++((1-((1-V(69))*(V(71)/5)))*pExt13))}
+Equ U GND VALUE={(1-((V(75)+1)/2))*(V(VCC)-2.5)*V(70)}
+Eqz Z GND VALUE={(V(VCC)-2.5)*V(70)*(((1-V(69))*(1-(V(71)/5)))
++(V(69)*V(71)/5))}
+
+.MODEL SWITCH1 VSWITCH (RON=1E-2 ROFF=1E10 VON=0 VOFF=1)
+.MODEL SWITCH2 VSWITCH (RON=1E-3 ROFF=1E5 VON=-1 VOFF=1)
+.MODEL IDEAL D
+.ENDS
+\end{minted}
+
+El modelo obtenido fue actualizado personalmente para una versión mas moderna de LTSpice y se han implementado mejoras en cuanto a la enumeración de los pines para que coincidan con los que presenta la hoja de datos del mismo y facilitar la comprensión y análisis del mismo si uno deseara simularlo en LTSpice.
+
+
+
+
+\subsubsection{Conclusiones Parciales}
+Como se ha desarrollado a lo largo de esta sección, se han podido implementar y adaptar los conocimientos adquiridos sobre rectificación controlada del \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT7%20%20%20-%20Circuito%20de%20Disparo%20para%20Tiristores/Monja.TPT7.EI2026.pdf}{Trabajo Práctico N°7} y semicontrolada del \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT6%20%20%20-%20Tiristores/Monja.TPT6.EI2026.pdf}{Trabajo Práctico N°6} a una carga resistiva-inductiva, la cual puede encontrarse en cualquier tipo de motor que uno desee controlar.
+
+Nótese que ya que la rectificación es controlada, los valores de tensiones y corrientes que llegan hacia la carga también lo serán. De modo que si la la velocidad de un motor de CC depende de estas tensiones y corrientes, es también posible controlar la velocidad del motor de forma indirecta mediante el circuito de control, lo que representa una ventaja significativa en eficiencia y precisión frente a los métodos de regulación convencionales.
+
+En esta sección también resulta fundamental destacar la evolución en los métodos de activación, ya que si bien el UJT (estudiado en el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT7%20%20%20-%20Circuito%20de%20Disparo%20para%20Tiristores/Monja.TPT7.EI2026.pdf}{Trabajo Práctico N°7}) es un componente pedagógico clave para entender el disparo, en la actualidad la industria opta por soluciones integradas como el TCA785 para el cual se ha realizado un análisis exhaustivo para la selección de sus componentes asociados, logrando un control de fase más robusto, estable y sencillo de implementar que con circuitos de componentes discretos.
+
+
+
+\section{Bibliografía}
+\begin{itemize}
+    \raggedright
+    \item \underline{$[1]$:} Grunthos, H. M. (2018). \textit{thyristr.lib: SPICE Library for Thyristors} [Código de software]. GitHub. \url{https://github.com/HMGrunthos/InrushTimer/blob/master/thyristr.lib}
+    
+    \item \underline{$[2]$:} IC Components. (2024, 25 de abril). \textit{Flyback Diodes: From Basics to Advanced Uses} [Artículo de blog]. \url{https://www.ic-components.es/blog/flyback-diodes-from-basics-to-advanced-uses.jsp}
+    
+    \item \underline{$[3]$:} OnSemi. (s.f.). \textit{1N4007: Standard Recovery Rectifier} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/view/1934502/ONSEMI/1N4007.html}
+
+    \item \underline{$[4]$:} Serra, G. y Alonso, E. (s.f.). \textit{Máquinas de Corriente Continua: Motores de Corriente Continua} [Apunte de cátedra]. Electrotecnia, Ingeniería Electrónica, Universidad Nacional de Córdoba.
+
+    \item \underline{$[5]$:} Infineon Technologies. (s.f.). \textit{TCA 785: Phase Control IC} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}
+
+    \item \underline{$[6]$:} Learn EveryThing. (16 de agosto de 2024). \textit{Three phase AC voltage controller circuit using TCA785} [Video]. YouTube. \url{https://www.youtube.com/watch?v=bu9NAIpbC_0}
+
+    \item \underline{$[7]$:} Sotelo, M. Á., Boquete, L. y Mazo, M. (2001). \textit{Modelado de componentes en SPICE}. Revista Española de Electrónica. \url{https://invett.aut.uah.es/sotelo/RevistaEspanolaModeladoSpice2001.pdf}
+\end{itemize}
+\end{document}

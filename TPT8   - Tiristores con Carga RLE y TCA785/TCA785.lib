@@ -1,0 +1,47 @@
+* Modelo TCA785 corregido para LTspice 24 por Monja Ernesto Joaquín.
+.SUBCKT TCA785 Q1 Q2 nQ1 nQ2 Z U Inh Sync Vcont VCC GND
++ PARAMS: pCb=2000p pCa=500p pRi=200k pExt12=0 pExt13=0
+
+* Redes internas
+Ca 51 GND {pCa} IC=0
+Cb 54 GND {(((pCb/2)+30)*1E-6)/69} IC=0
+Cd 71 72 150nF
+Cx 55 GND 300nF IC=1
+Rc 54 55 100
+Rx1 53 GND 200
+Rx2 53 55 200
+Rx3 72 74 100
+Rin 53 54 1MEG
+Rf1 Inh GND 1K
+Rf2 Sync GND 1K
+Rf3 Vcont GND 1K
+Rf4 VCC GND 1K
+
+Da 72 53 IDEAL
+Dc 55 GND IDEAL
+Dd GND 55 IDEAL
+Sa 51 GND 52 GND SWITCH1
+Sb 54 GND 55 GND SWITCH2
+VA 74 GND SIN(-0.5 1m 1k)
+
+* Lógica de Control (Uso de sintaxis table() nativa de LTspice)
+Gi GND 51 VALUE={3.41/pRi}
+Ec 52 GND V=table(V(Sync), -20,1, -50u,1, -20u,0, 20u,0, 50u,1, 20,1)
+Ec2 69 GND V=table(V(Sync), -20,0, 0,0, 10u,1, 20,1)
+Ec1 71 GND V=table((V(51)-V(Vcont))*500*((2*pRi*pCa*15)/3.41), -20,0, 0,0, 0.1,5, 20,5)
+Einh 70 GND V=table(V(Inh), -20,0, 2.5,0, 3.3,1, 20,1)
+Ec3 75 0 V=table(V(55), -10,-1, -0.5,-1, 0.5,1, 10,1)
+Ga GND 55 53 54 200
+
+* Ecuaciones de Salida
+Eq15 Q1 GND VALUE={V(69)*(V(VCC)-2.5)*V(70)*((((V(75)+1)/2)*(1-pExt12))+((V(71)/5)*pExt12))}
+Eq14 Q2 GND VALUE={(1-V(69))*(V(VCC)-2.5)*V(70)*(((V(75)+1)*(1-pExt12)/2)+((V(71)/5)*pExt12))}
+Eq2 nQ1 GND VALUE={(V(VCC)-2.5)*V(70)*(((1-((V(69)/2)*(V(75)+1)))*(1-pExt13))+((1-(V(69)*(V(71)/5)))*pExt13))}
+Eq4 nQ2 GND VALUE={(V(VCC)-2.5)*V(70)*(((1-(((1-V(69))/2)*(V(75)+1)))*(1-pExt13))+((1-((1-V(69))*(V(71)/5)))*pExt13))}
+Equ U GND VALUE={(1-((V(75)+1)/2))*(V(VCC)-2.5)*V(70)}
+Eqz Z GND VALUE={(V(VCC)-2.5)*V(70)*(((1-V(69))*(1-(V(71)/5)))+(V(69)*V(71)/5))}
+
+.MODEL SWITCH1 VSWITCH (RON=1E-2 ROFF=1E10 VON=0 VOFF=1)
+.MODEL SWITCH2 VSWITCH (RON=1E-3 ROFF=1E5 VON=-1 VOFF=1)
+.MODEL IDEAL D
+.ENDS

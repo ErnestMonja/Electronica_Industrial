@@ -1,0 +1,24 @@
+* C:\Users\Ernesto\Desktop\Ingeniería Electrónica\9- Noveno Semestre\Electrónica Industrial\1- Trabajos Prácticos\1- Trabajos Prácticos del Teórico (TPT)\TPT8   - Tiristores con Carga RLE y TCA785\TPT8 - Rectificador Trifásico Controlado con carga RLE.asc
+V_1 V_1 0 SINE(0 311.12 50 0 0 0)
+V_2 V_2 0 SINE(0 311.12 50 0 0 -120)
+V_3 V_3 0 SINE(0 311.12 50 0 0 120)
+R_m V_L N001 2.5
+V_G2 V_G2 V_L PULSE(0 5 15.833m 1u 1u 7m 20m)
+V_G3 V_G3 V_L PULSE(0 5 2.500m 1u 1u 7m 20m)
+V_G1 V_G1 V_L PULSE(0 5 9.167m 1u 1u 7m 20m)
+XU1 V_1 V_G1 V_L SCR
+XU2 V_2 V_G2 V_L SCR
+XU3 V_3 V_G3 V_L SCR
+XU4 N003 V_G4 V_1 SCR
+XU5 N003 V_G5 V_2 SCR
+XU6 N003 V_G6 V_3 SCR
+V_G4 V_G5 V_2 PULSE(0 5 5.833m 1u 1u 7m 20m)
+V_G5 V_G6 V_3 PULSE(0 5 12.500m 1u 1u 7m 20m)
+V_G6 V_G4 V_1 PULSE(0 5 19.167m 1u 1u 7m 20m)
+L_a N001 N002 17.5m
+V§E_cem N002 N003 158.75
+* Simulación:
+.inc thyristr.lib
+.tran 0 150m 0 10u
+.backanno
+.end

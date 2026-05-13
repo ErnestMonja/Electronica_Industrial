@@ -1,0 +1,52 @@
+Missing ".ends" statement in file "thyristr.lib"
+LTspice 24.0.12 for Windows
+Circuit: * C:\Users\Ernesto\Desktop\Ingeniería Electrónica\9- Noveno Semestre\Electrónica Industrial\1- Trabajos Prácticos\1- Trabajos Prácticos del Teórico (TPT)\TPT8 - Tiristores con Carga RLE y TCA785\TPT8 - Rectificador Trifásico Controlado con carga RLE.asc
+Start Time: Wed May 13 10:10:16 2026
+solver = Normal
+Maximum thread count: 12
+tnom = 27
+temp = 27
+method = modified trap
+U1:viak: Missing value, assumed 0V @ DC
+U1:vigf: Missing value, assumed 0V @ DC
+U2:viak: Missing value, assumed 0V @ DC
+U2:vigf: Missing value, assumed 0V @ DC
+U3:viak: Missing value, assumed 0V @ DC
+U3:vigf: Missing value, assumed 0V @ DC
+U4:viak: Missing value, assumed 0V @ DC
+U4:vigf: Missing value, assumed 0V @ DC
+U5:viak: Missing value, assumed 0V @ DC
+U5:vigf: Missing value, assumed 0V @ DC
+U6:viak: Missing value, assumed 0V @ DC
+U6:vigf: Missing value, assumed 0V @ DC
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+vernier = 0.25
+Gmin = 0.000482283
+vernier = 0.333333
+vernier = 0.444444
+Gmin = 0.000223864
+vernier = 0.592592
+Gmin = 6.62534e-05
+vernier = 0.790123
+vernier = 1
+Gmin = 1.00175e-05
+Gmin = 1.07562e-06
+Gmin = 1.15494e-07
+Gmin = 1.24011e-08
+Gmin = 1.33156e-09
+Gmin = 1.42975e-10
+Gmin = 1.53518e-11
+Gmin = 1.64839e-12
+Gmin = 1.76994e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 4.442 seconds.
+
