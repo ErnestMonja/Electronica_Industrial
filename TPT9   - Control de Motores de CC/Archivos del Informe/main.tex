@@ -1,0 +1,426 @@
+\documentclass[12pt,a4paper]{article}
+
+% Paquetes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx} % Ángulos
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{minted}  % Códigos
+\usepackage{gensymb} % Grados: "°"
+\graphicspath{{Figuras/}}
+\onehalfspacing
+
+
+% Datos
+\author{Nombre y Apellido \\ Legajo: XXXXX}
+\date{\today}
+
+\begin{document}
+
+% Carátula personalizada
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.25\textwidth]{escudo.png} 
+    \hspace{1cm}
+    \includegraphics[width=0.3\textwidth]{download.png} \\[1cm]
+
+    {\large \textbf{UNIVERSIDAD NACIONAL DE CÓRDOBA} \\[0.5cm]}
+    {\large \textbf {FACULTAD DE CIENCIAS EXACTAS, FÍSICAS Y NATURALES} \\[1cm]}
+    {\Large ELECTRÓNICA INDUSTRIAL \\[1cm]}
+
+    \rule{\textwidth}{0.5pt} \\[0.5cm]
+    {\Large \textbf{Trabajo Práctico Teórico N°9} \\[0.3cm]}
+    {\Large \textbf{Control de Motores de CC} \\[0.3cm]}
+    \rule{\textwidth}{0.5pt} \\[1cm]
+
+\begin{tabular}{l l}
+\textbf{Profesor Titular:} & Ing. Agüero Adrián.\\
+\textbf{Profesor Adjunto:} & Ing. Gangi O. Sergio.\\
+\textbf{Profesor Adjunto:} & Ing. Laboret Sergio.\\
+
+\\
+\textbf{Alumno:} Monja, Ernesto Joaquín. \\
+\textbf{DNI:} 43.873.728 \\
+\end{tabular}\\[3cm]
+
+{\centering Año 2026 \par}
+
+\end{titlepage}
+
+
+
+% Índice
+\tableofcontents
+\newpage
+\indent
+
+
+
+\section{Introducción}
+En este trabajo práctico se busca aplicar los conocimientos y conceptos adquiridos en las clases teóricas y prácticas respecto al control de motores de CC en diversas aplicaciones. Para ello realizaremos un diseño de la parte de electrónica de potencia cómo de control para un motor de CC y y para un segundo ejemplo donde se pondrán en práctica las habilidades desarrolladas hasta ahora con respecto al análisis, diseño, elección de componentes y simulación de un circuito de potencia.
+
+
+
+\section{Desarrollo}
+\subsection{Control de un Motor de CC para una Cinta de Caminar}
+\subsubsection{Diseño, análisis y cálculo de los componentes}
+Para determinar qué circuito puede ser el ideal para este tipo de aplicaciones nos debemos remontar a los datos que nos entrega la consigna los cuales se listan a continuación:
+\begin{itemize}
+    \item $V_{L(AV)} = 180 \ [V]$
+    \item $I_{nom} = 4.2 \ [A]$
+    \item $P_{L} = 1 \ [HP] \approx 745,7 \ [W]$
+    \item $n = 4000 \ [rpm]$
+\end{itemize}
+
+Dado que la potencia del motor es baja, no resulta necesario utilizar un circuito rectificador trifásico sino más bien con cualquier tipo de rectificador monofásico será suficiente para esta aplicación. 
+
+Por otra parte el uso de tiristores en la rectificación será clave por sobre unicamente utilizar diodos debido a que como se concluyó en el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT8%20%20%20-%20Tiristores%20con%20Carga%20RLE%20y%20TCA785/Monja.TPT8.EI2026.pdf}{Trabajo Práctico N°8}, dado que la velocidad del motor ($n$) depende de los valores de tensión y corriente que entran al motor de CC, una rectificación semi o totalmente controlada permite ajustar finamente estos valores mediante el circuito de disparo de tiristores.
+
+Resulta entonces que la elección del circuito de potencia yace entre un circuito rectificador monofásico semicontrolado y uno controlado, donde se eligió al semicontrolado debido a que:
+\begin{itemize}
+    \item \underline{Accionamiento de un solo cuadrante:} Dado que una cinta de caminar convencional sólo necesita girar en un sentido y controlar su velocidad (acelerar y mantener), y no necesita frenado regenerativo (devolver energía a la red eléctrica), se tiene entonces que el puente semicontrolado es ideal para operaciones de 1 cuadrante, mientras que el totalmente controlado (que permite trabajar en 2 cuadrantes e invertir la tensión) sería un desperdicio técnico y económico para esta aplicación.
+    
+    \item \underline{Efecto de $"$Rueda Libre$"$ natural:} Dado que los motores de CC son cargas altamente inductivas se tiene que en un rectificador monofásico semicontrolado, cuando la tensión de la red cruza por cero, la inductancia del motor fuerza a que la corriente siga circulando. Los dos diodos del puente le ofrecen un camino de baja resistencia (o también conocido como rueda libre) para que esa corriente se descargue, evitando que aparezcan picos de tensión negativa en la carga. Nótese que en un puente de 4 tiristores, se debería tener que agregar un diodo de rueda libre externo obligatoriamente, encareciendo aún más el circuito.
+
+    \item \underline{Simplicidad de control:} Un circuito integrado para controlar el disparo de tiristores, como el TCA785 solo necesita disparar dos tiristores en lugar de cuatro, simplificando enormemente la etapa de aislamiento y disparo.    
+\end{itemize}
+
+Por lo tanto, se optará por utilizar como circuito de potencia que alimente a este motor a un rectificador monofásico semicontrolado de onda completa tal como el que se muestra en la siguiente figura:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figura 1.png}
+    \caption{Simulación del rectificador monofásico semicontrolado con motor de CC como carga.}
+    \label{fig:fig_1}
+\end{figure}
+
+De aquí y con los datos que provee la consigna, podemos determinar el ángulo de disparo mínimo ($\alpha_{i}$) en base a la ecuación de la tensión media en la carga según:
+\begin{equation}
+    V_{L(AV)} = \frac{1}{T} \int_{0}^{T} v_{L}(t) dt
+    \label{eq_1}
+\end{equation}
+
+Realizando los reemplazos del periodo y limites de integración correspondientes a un circuito rectificador monofásico semicontrolado, se tiene que:
+\begin{equation}
+    V_{L(AV)} = \frac{1}{\pi} \int_{\alpha_{i}}^{\pi} \sqrt{2} V_{(max)}\sin(\theta) d\theta
+    \label{eq_2}
+\end{equation}
+
+\begin{equation}
+    V_{L(AV)} = \frac{\sqrt{2} V_{(max)}}{\pi} [-\cos(\theta)]_{\alpha_{i}}^{\pi}
+    \label{eq_3}
+\end{equation}
+
+\begin{equation}
+    V_{L(AV)} = \frac{\sqrt{2} V_{(max)}}{\pi} [-\cos(\pi) - (-\cos(\alpha_{i}))]
+    \label{eq_4}
+\end{equation}
+
+\begin{equation}
+    V_{L(AV)} = \frac{\sqrt{2} V_{(max)}}{\pi} (1 + \cos(\alpha_{i}))
+    \label{eq_5}
+\end{equation}
+
+Luego, sabemos que: $V_{L(AV)} = 180 \ [V]$ como dato del motor y también sabemos que: $V_{(max)} = 220 \ [V]$ debido a que la relación de transformación del transformador es igual a: $k = 1$, por lo tanto podemos despejar el ángulo de disparo, como:
+\begin{equation}
+    180 = \frac{220\sqrt{2}}{\pi} (1 + \cos(\alpha_{i}))
+    \label{eq_6}
+\end{equation}
+
+\begin{equation}
+   \alpha_{i} = \arccos \left(\frac{180 \pi}{220\sqrt{2}} - 1\right) \approx 35.16 \ [\degree]
+    \label{eq_7}
+\end{equation}
+
+Se tiene que este ángulo de disparo se correlaciona directamente con un tiempo de retardo del disparo de alguno de los 2 tiristores de:
+\begin{equation}
+    t = \frac{1}{f} \frac{\alpha_{i}}{360 \degree} = \frac{35.16}{50(360)} \approx 1.953 \ [ms]
+    \label{eq_8}
+\end{equation}
+
+Luego, sabiendo la potencia del motor ($P = 745,7 \ [W]$), la tensión que consume el mismo ($V_{L(AV)} = 180 \ [V]$), se puede tomar al motor de CC como una carga enteramente resistiva de impedancia igual a:
+\begin{equation}
+    P_{L} = \frac{V_{L(AV)}^{2}}{R_{m}} \xrightarrow{Despejando \ R_{m}} R_{m} = \frac{V_{L(AV)}^{2}}{P_{L}} = \frac{(180)^{2}}{745,7} \approx 43.44 \ [\Omega]
+    \label{eq_9}
+\end{equation}
+
+Por último, se asumirá que la inductancia del motor de $L_{a} = 50 \ [mH]$ lo cual es un valor razonable dada la potencia del motor.
+
+
+\subsubsection{Selección de Componentes}
+La elección de componentes se basa principalmente en elegir a los 2 tiristores y los 2 diodos que conforman el puente (luego analizaremos el circuito de disparo) para los cuales se deben tomar las siguientes consideraciones:
+\begin{itemize}
+    \item \underline{Tensión de Ruptura de selección:} Tomando un factor de seguridad de $2.5$ veces que contempla los picos de sobretensión, resulta que esta tensión será igual a:
+    \begin{equation}
+        V_{RRM} = 2.5(220)(\sqrt{2}) \approx 777.81 \ [V]
+        \label{eq_10}
+    \end{equation}
+
+    \item \underline{Corriente directa máxima:} Dado que en un puente como el de la \autoref{fig:fig_1} la corriente directa es la mitad de la total (es decir: $\frac{I_{nom}}{2}$) y tomando un factor de seguridad de $1.3$ veces que contempla las sobrecargas, resulta que esta corriente será igual a:
+    \begin{equation}
+        I_{F-T(AV)} = 1.3 \left( \frac{4.2}{2} \right) \approx 2.73 \ [A]
+        \label{eq_11}
+    \end{equation}
+\end{itemize}
+
+Resulta entonces que con los valores deducidos en la \autoref{eq_10} y la \autoref{eq_11}, se pueden elegir los siguientes componentes:
+\begin{itemize}
+    \item \underline{Diodos:} Se optó por utilizar unos 1N5408, los cuales se caracterizan según su hoja de datos por tener los siguientes valores dentro de los márgenes establecidos:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{Figura 2.png}
+        \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/702464/TSC/1N5408.html}{Hoja de Datos del 1N5408.} [1]}
+        \label{fig:fig_2}
+    \end{figure}
+
+
+    \item \underline{Tiristores:} Se optó por utilizar unos BT151-800R, los cuales se caracterizan según su hoja de datos por tener los siguientes valores dentro de los margenes establecidos:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Figura 3.png}
+        \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/16804/PHILIPS/BT151-800R.html}{Hoja de Datos del BT151-800R.} [2]}
+        \label{fig:fig_3}
+    \end{figure}
+\end{itemize}
+
+Para el disparo de los tiristores, se recurrió a utilizar el ya conocido TCA785que fue presentado y cuyo proceso de configuración se desarrolló en mayor detalle en el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT8%20%20%20-%20Tiristores%20con%20Carga%20RLE%20y%20TCA785/Monja.TPT8.EI2026.pdf}{Trabajo Práctico N°8}. Para nuestra aplicación el fabricante nos provee utilizar el siguiente circuito equivalente:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Figura 4.png}
+    \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}{Hoja de Datos del TCA785.} [3]}
+    \label{fig:fig_4}
+\end{figure}
+
+
+\subsubsection{Simulación en LTSpice}
+Para la simulación en LTSpice, se incorporaron los modelos de los componentes elegidos en la sección precedente y se añadió la mejora al modelo del TCA785 que se comentó en el \href{https://github.com/ErnestMonja/Electronica-Industrial/blob/main/TPT8%20%20%20-%20Tiristores%20con%20Carga%20RLE%20y%20TCA785/Monja.TPT8.EI2026.pdf}{Trabajo Práctico N°8} [4] [5], el cual se presenta a continuación el código del $TCA785.lib$ actualizado:
+\begin{minted}[linenos]{bash}
+* Modelo TCA785 corregido para LTspice 24 por Monja Ernesto Joaquín.
+.SUBCKT TCA785 Q1 Q2 nQ1 nQ2 Z U Inh Sync Vcont VCC GND
++ PARAMS: pCb=2000p pCa=500p pRi=200k pExt12=0 pExt13=0
+
+* Redes internas
+Ca 51 GND {pCa} IC=0
+Cb 54 GND {(((pCb/2)+30)*1E-6)/69} IC=0
+Cd 71 72 150nF
+Cx 55 GND 300nF IC=1
+Rc 54 55 100
+Rx1 53 GND 200
+Rx2 53 55 200
+Rx3 72 74 100
+Rin 53 54 1MEG
+Rf1 Inh GND 1K
+Rf2 Sync GND 1K
+Rf3 Vcont GND 1K
+Rf4 VCC GND 1K
+
+Da 72 53 IDEAL
+Dc 55 GND IDEAL
+Dd GND 55 IDEAL
+Sa 51 GND 52 GND SWITCH1
+Sb 54 GND 55 GND SWITCH2
+VA 74 GND SIN(-0.5 1m 1k)
+
+* Lógica de Control (Uso de sintaxis table() nativa de LTspice)
+Gi GND 51 VALUE={3.41/pRi}
+Ec 52 GND V=table(V(Sync), -20,1, -50u,1, -20u,0, 20u,0, 50u,1, 20,1)
+Ec2 69 GND V=table(V(Sync), -20,0, 0,0, 10u,1, 20,1)
+Ec1 71 GND V=table((V(51)-V(Vcont))*500*
++((2*pRi*pCa*15)/3.41), -20,0, 0,0, 0.1,5, 20,5)
+Einh 70 GND V=table(V(Inh), -20,0, 2.5,0, 3.3,1, 20,1)
+Ec3 75 0 V=table(V(55), -10,-1, -0.5,-1, 0.5,1, 10,1)
+Ga GND 55 53 54 200
+
+* Ecuaciones de Salida
+Eq15 Q1 GND VALUE={V(69)*(V(VCC)-2.5)*V(70)*((((V(75)+1)/2)*(1-pExt12))
++((V(71)/5)*pExt12))}
+Eq14 Q2 GND VALUE={(1-V(69))*(V(VCC)-2.5)*V(70)*(((V(75)+1)*(1-pExt12)/2)
++((V(71)/5)*pExt12))}
+Eq2 nQ1 GND VALUE={(V(VCC)-2.5)*V(70)*(((1-((V(69)/2)*(V(75)+1)))*(1-pExt13))
++((1-(V(69)*(V(71)/5)))*pExt13))}
+Eq4 nQ2 GND VALUE={(V(VCC)-2.5)*V(70)*(((1-(((1-V(69))/2)*(V(75)+1)))*(1-pExt13))
++((1-((1-V(69))*(V(71)/5)))*pExt13))}
+Equ U GND VALUE={(1-((V(75)+1)/2))*(V(VCC)-2.5)*V(70)}
+Eqz Z GND VALUE={(V(VCC)-2.5)*V(70)*(((1-V(69))*(1-(V(71)/5)))
++(V(69)*V(71)/5))}
+
+.MODEL SWITCH1 VSWITCH (RON=1E-2 ROFF=1E10 VON=0 VOFF=1)
+.MODEL SWITCH2 VSWITCH (RON=1E-3 ROFF=1E5 VON=-1 VOFF=1)
+.MODEL IDEAL D
+.ENDS
+\end{minted}
+
+Con este código fue posible armar el siguiente diagrama esquemático:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Figura 5.png}
+    \caption{Simulación del circuito de control del control del motor de CC.}
+    \label{fig:fig_5}
+\end{figure}
+
+Nótese que el esquemático planteado para este circuito es muy simple, debido a que el modelado realizado en LTSpice ya incorpora gran parte de su funcionamiento interno y externo, de modo que solo requiere de pequeños valores de componentes a fijar, tales como:
+\begin{itemize}
+    \item Nótese que si bien no se explicita en la hoja de datos, se debe limitar la corriente de entrada al integrado a no más de $200 \ [\mu A]$. Por lo tanto, se debe introducir una resistencia de alto valor igual a:
+    \begin{equation}
+        R_{Sync} = \frac{V_{max}}{200 \ [\mu A]} = \frac{311.12}{200x10^{-6}} \approx 1.55 \ [M\Omega]
+        \label{eq_12}
+    \end{equation}
+    
+    \item Se optó por utilizar una tensión de alimentación de $V_{CC} = 15 \ [V]$ y en cuanto a la tensión de $V_{Cont}$, esta determina el ángulo de disparo según la siguiente ecuación:
+    \begin{equation}
+        V_{cont} = V_{10(max)} \frac{\alpha_i}{180} 
+        \label{eq_13}
+    \end{equation}
+
+    Donde $V_{10(max)}$ estará dada por:
+    \begin{equation}
+        V_{10(max)} = \frac{V_{ref}(t)}{R_{9}(C_{10})}
+        \label{eq_14}
+    \end{equation}
+
+    Dado que $V_{ref} = 3.1 \ [V]$ está fijado por el chip y $t = 10 \ [ms]$ es la duración de un semiciclo de red (para $50 \ [Hz]$, el periodo es $20 \ [ms]$, por lo que el semiciclo dura la mitad), podemos fijar a: $V_{10(max)} = 10 \ [V]$ y a $C_{10} = 100 \ [nF]$, de modo que:
+    \begin{equation}
+        R_{9} = \frac{V_{ref}(t)}{V_{10(max)}(C_{10})} = \frac{3.1(10x10^{-3})}{10(100x10^{-9})} = 31 \ [k\Omega]
+        \label{eq_15}
+    \end{equation}
+
+    Luego, se tendrá que según la \autoref{eq_13}, $V_{cont} \approx 1.953 \ [V]$.
+\end{itemize}
+
+Por lo tanto, al simular este circuito, se obtuvieron las siguientes gráficas de tensión (en color verde flúor) y corriente (en color azul oscuro) en el motor:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figura 6.png}
+    \caption{Simulación del circuito de control del control del motor de CC.}
+    \label{fig:fig_6}
+\end{figure}
+
+
+
+\subsection{Conclusiones Parciales}
+A partir de los resultados obtenidos en la simulación, se logró validar de forma satisfactoria el funcionamiento e integración de un circuito de control de fase basado en el integrado TCA785 para comandar un circuito rectificador monofásico semicontrolado. El análisis del sistema permitió constatar los siguientes aspectos clave:
+\begin{itemize}
+    \item \underline{Precisión en el Control de Fase:} Se verificó experimentalmente la linealidad en la generación de la rampa de sincronismo del chip. El correcto dimensionamiento de la malla de temporización posibilitó una correlación exacta entre el diseño analítico y la respuesta del circuito, demostrando que la tensión de control aplicada de $1.953 \ [V]$ activa los pulsos de compuerta con el ángulo de disparo teórico requerido de $35.16 \ [\degree]$.
+
+    \item \underline{Dinámica de la Carga Inductiva (Motor de CC):} Los gráficos de tensión y corriente en la carga reflejan con fidelidad el impacto del componente inductivo ($L_a$). Se observó claramente cómo la energía almacenada en el campo magnético del inductor actúa como un filtro dinámico que suaviza la forma de onda de la corriente, reduciendo el rizado y extendiendo el periodo de conducción de los SCR ligeramente más allá del cruce por cero de la tensión de red.
+
+    \item \underline{Eficacia de la Topología:} El rectificador semicontrolado demostró ser una solución robusta y eficiente, logrando recortar la onda senoidal de manera simétrica en ambos semiciclos para regular eficazmente el valor medio de tensión entregado a la armadura
+\end{itemize}
+
+En conclusión, la simulación ratificó con éxito el acoplamiento entre el bloque de control de baja señal y la etapa de potencia, consolidando este método de control por corte de fase como una técnica viable y precisa para la regulación de velocidad en motores de corriente continua.
+
+
+
+\subsection{Placa de Control de un Semáforo}
+Se propone como estudio de opto-acopladores, el diseño de la placa de control de un semáforo con luces roja, amarillo y verde para lámparas de $120 \ [W]$ conectadas a $220 \ [V]$ de CA. Lo primero que podemos calcular es la corriente que consume cada una de estas lámparas al igual que se calcula el consumo de corriente de cualquier lámpara del hogar:
+\begin{equation}
+    I_{L(rms)} = \frac{P_{L}}{V_{(rms)}} = \frac{120 \ [W]}{220 \ [V]} = 0.5454 \ [A]
+    \label{eq_16}
+\end{equation}
+
+Nótese que las potencias de estas lámparas y consumos de corrientes son más elevados de los que puede manejar cualquier microcontrolador de mercado, por lo tanto se debe recurrir a la electrónica de potencia. Aquí usaremos un opto-acoplador para comandar el disparo de los TRIACs que permitirán prender y apagar las luces del semáforo.
+
+La idea entonces es que el microcontrolador prenda el LED interno del opto-acoplador, luego este le da la señal al TRIAC el cual finalmente encenderá la lámpara de $120 \ [W]$ del semáforo. Por lo tanto se genera un aislamiento galvánico que protege a la microelectrónica de la parte de potencia. Se propone entonces utilizar como opto-acoplador un MOC3041 el cual en su hoja de datos describe una aplicación pensada para TRIACs como es la nuestra:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figura 7.png}
+    \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/5039/MOTOROLA/MOC3041.html}{Hoja de Datos del MOC-3041.} [6]}
+    \label{fig:fig_7}
+\end{figure}
+
+Se propone entonces conectar un LED indicador en serie con el diodo emisor interno del MOC3041 ya que si la corriente pasa por uno, obligatoriamente pasara por el otro lo que implica que si el LED indicador de la placa enciende, es porque el del opto-acoplador también se activó.
+
+Suponiendo entonces que el microcontrolador entrega una tensión de salida de $V_{CC} = 5 \ [V]$, se tiene que la resistencia en serie del LED indicador estará dada por:
+\begin{equation}
+    R_{in} = \frac{V_{CC} - V_{LED} - V_{F}}{I_{FT}}
+    \label{eq_17}
+\end{equation}
+
+Donde $V_{LED}$ es la caída de tensión del diodo LED indicador promedio y es aproximadamente igual a: $V_{LED} \approx 2 \ [V]$, mientras que $V_{F}$ es la caída de tensión del diodo del opto-acoplador e $I_{FT}$ es la corriente mínima necesaria para garantizar el disparo (latch) del opto-acoplado bajo cualquier condición. Estos últimos dos valores se pueden encontrar fácilmente en la hoja de datos del fabricante:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figura 8.png}
+    \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/5039/MOTOROLA/MOC3041.html}{Hoja de Datos del MOC-3041.} [6]}
+    \label{fig:fig_8}
+\end{figure}
+
+Reemplazando estos datos en la \autoref{eq_17} se deduce que: $R_{in} \approx 113.3 \ [\Omega]$ de modo que se adopta una resistencia de $R_{in} = 110 \ [\Omega]$ para garantizar el encendido de las luces.
+
+Por otro lado, podemos determinar que TRIAC vamos a utilizar sabiendo los valores de tensiones y corrientes que atraviesan el mismo aplicándole los factores de seguridad ya mencionados en secciones anteriores ($1.3$ para corrientes y $2.5$ para tensiones):
+\begin{equation}
+    \begin{cases}
+        V_{RRM} = 2.5 V_{(rms)} \sqrt{2} = 2.5(220)(\sqrt{2}) \approx 777.81 \ [V] \\
+        I_{T(rms)} = 1.3 I_{L} = 1.3(0.5454) \approx 0.709 \ [A]
+    \end{cases}
+\end{equation}
+
+De aquí podemos elegir como TRIAC un BT136-800, el cual presenta en su hoja de datos los siguientes valores de tensiones y corrientes:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Figura 9.png}
+    \caption{\href{https://www.alldatasheet.com/datasheet-pdf/view/16754/PHILIPS/BT136-800.html}{Hoja de Datos del BT136-800.} [7]}
+    \label{fig:fig_9}
+\end{figure}
+
+Para simular la lámpara, se la tomará como una resistencia pura de valor igual a:
+\begin{equation}
+    R_{Lampara} = \frac{V_{rms}^{2}}{P_{L}} = \frac{(220)^{2}}{120} \approx 403.3 \ [\Omega]
+    \label{eq_19}
+\end{equation}
+
+Con todos los datos en mente, se propone el armado y simulación del circuito en LTSpice de acuerdo a la siguiente figura:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Figura 10.png}
+    \caption{Simulación del disparo de un LED.}
+    \label{fig:fig_10}
+\end{figure}
+
+Se observa que cuando la salida del microcontrolador (Simulada como una fuente de pulsos $V_{CC}$ en rojo) se encuentra en alto, esta enciende el opto-acoplador el cual comanda el disparo del TRIAC y por lo tanto se observa la conducción de corriente en la carga (como $I_{R_{Lampara}}$ en color azul oscuro).
+
+Nótese que este consiste del circuito de un único LED del semáforo, pero se sabe que un semáforo está compuesto de 3 luces, por lo tanto y en la práctica se debe realizar este circuito 2 veces más para cumplir con la consigna. A fines prácticos de la simulación, si uno de ellos funciona, el resto también lo hará por lo que queda concluida la parte de diseño y simulación de este circuito.
+
+Por otro lado, los modelos de LTSpice utilizados para el TRIAC y el MOC3041, se encuentran añadidos al repositorio de GitHub de este TP si se desea investigar aun más sobre ellos.
+
+
+
+\subsection{Conclusiones Parciales}
+En esta sección vimos como se puede diseñar la placa de control de un semáforo común, donde a partir de ciertos datos, se investigó, diseñó y simuló la electrónica de potencia requerida para el correcto funcionamiento de este sistema. Se destacan como conclusiones principales de esta sección:
+\begin{itemize}
+    \item \underline{Diseño y Análisis del Disparo con el MOC3041:} Se empleó un marco teórico breve pero conciso en cuanto a como obtener la $R_{in}$ que el fabricante indica que será la que generará el disparo del TRIAC (véase la \autoref{fig:fig_7}). Esta resistencia garantiza la circulación de una $I_{FT} \approx 15 \ [mA]$ con el LED indicador en serie, asegurando el disparo del opto-acoplador desde la lógica de $5 \ [V]$, sin comprometer las salidas del microcontrolador.
+
+    \item \underline{Correcta Implementación de los Modelos en LTSpice:} Se observan en los resultados presentados en la \autoref{fig:fig_10}, que la implementación de los modelos de LTSpice tanto del TRIAC como del MOC3041 es correcta, ya que proporcionan el disparo del TRIAC y por consiguiente, el encendido virtual del LED simulado con una resistencia.
+
+    \item \underline{Sincronismo de red:} Se verificó el correcto funcionamiento del bloque de \textit{zero-crossing}. El encendido de la carga de $120 \ [W]$ se produce de forma suave en el cruce por cero de la tensión de red ($220 \ [V]$ de CA), y el apagado se ejecuta de forma natural cuando la corriente cae por debajo de la corriente de mantenimiento ($I_{H}$), extinguiéndose exactamente en $0 \ [A]$.
+\end{itemize}
+
+
+
+\section{Bibliografía}
+\begin{itemize}
+    \raggedright
+    \item \underline{$[1]$:} Taiwan Semiconductor. (s.f.). \textit{1N5408: 3.0A Glass Passivated Silicon Rectifier} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/view/702464/TSC/1N5408.html}
+
+    \item \underline{$[2]$:} Philips Semiconductors. (s.f.). \textit{BT151 series: Thyristors} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/view/16804/PHILIPS/BT151-800R.html}
+
+    \item \underline{$[3]$:} Infineon Technologies. (s.f.). \textit{TCA 785: Phase Control IC} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/view/80125/INFINEON/TCA785.html}
+    
+    \item \underline{$[4]$:} Grunthos, H. M. (2018). \textit{thyristr.lib: SPICE Library for Thyristors} [Código de software]. GitHub. \url{https://github.com/HMGrunthos/InrushTimer/blob/master/thyristr.lib}
+    
+    \item \underline{$[5]$:} Sotelo, M. Á., Boquete, L. y Mazo, M. (2001). \textit{Modelado de componentes en SPICE}. Revista Española de Electrónica. \url{https://invett.aut.uah.es/sotelo/RevistaEspanolaModeladoSpice2001.pdf}
+
+    \item \underline{$[6]$:} Motorola. (s.f.). \textit{MOC3041: Optoisolators Triac Driver Output} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/view/5039/MOTOROLA/MOC3041.html}
+
+    \item \underline{$[7]$:} NXP Semiconductors. (s.f.). \textit{BT136-800: Triacs Glass Passivated} [Hoja de datos]. \url{https://www.alldatasheet.com/datasheet-pdf/pdf/16754/PHILIPS/BT136-800.html}
+    
+\end{itemize}
+\end{document}

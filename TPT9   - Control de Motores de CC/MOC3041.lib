@@ -1,0 +1,73 @@
+* ============================================================================
+* MOC3041 - Zero-Crossing Optoisolator Triac Driver
+* Behavioral SPICE subcircuit for LTspice
+* ----------------------------------------------------------------------------
+*
+* Pinout (DIP-6):
+*   1 = Anode      (LED input +)
+*   2 = Cathode    (LED input -)
+*   3 = NC         (not connected)
+*   4 = MT1        (main terminal)
+*   5 = Substrate  (do not connect)
+*   6 = MT2        (main terminal)
+*
+* Solo se usan los pines 1, 2, 4 y 6.
+*
+* Comportamiento modelado:
+*   - LED de entrada con Vf ~ 1,15 V @ 10 mA
+*   - Corriente de disparo IFT = 5 mA (tipico)
+*   - Ventana de inhibicion (zero-cross) Vinh = +/- 20 V (tipico)
+*   - Conduccion bidireccional una vez disparado (cuerpo TRIAC)
+*   - Auto-conmutacion cuando |I_mt| < I_hold (100 uA)
+*   - Resistencia en conduccion ~ 5 ohm
+*
+* No modelado:
+*   - Limites dv/dt y di/dt
+*   - Dependencia con la temperatura
+*   - Corrientes de fuga en estado off
+*   - Variacion del CTR optico
+*
+* ============================================================================
+.SUBCKT MOC3041 1 2 4 6
+*
+* --- LED de entrada con sensor de corriente ---
+DLED   1  1A  DMODLED
+VLED  1A   2  0
+*
+* --- Deteccion de LED activo (IFT = 5 mA) ---
+BACT  ACT 0 V=if(I(VLED) > 5m, 1, 0)
+*
+* --- Sensor de corriente en el terminal principal ---
+VMT    4  4A  0
+*
+* --- Detector de ventana de cruce por cero (+/- 20 V) ---
+BZC   ZC  0 V=if(abs(V(4A,6)) < 20, 1, 0)
+*
+* --- Senal SET: LED encendido Y cerca del cruce por cero ---
+BSET  SET 0 V=if((V(ACT)>0.5) & (V(ZC)>0.5), 1, 0)
+*
+* --- Latch SR conductual ---
+* Integrador con clamp:
+*   SET   -> carga positiva
+*   RESET -> descarga cuando latch alto, |I_mt| < I_hold y SET inactivo
+GLATCH 0 LATCH VALUE={
++   if(V(SET)>0.5, 1m,
++   if((V(LATCH)>0.5) & (abs(I(VMT))<100u) & (V(SET)<0.5), -1m,
++   0))}
+CLATCH LATCH 0 1p IC=0
+* Clamp del nodo LATCH a [0 V .. 1 V]
+DCH   LATCH NHI   DCLAMP
+VNHI  NHI    0    1
+DCL    NLO LATCH  DCLAMP
+VNLO  NLO    0    0
+*
+* --- Cuerpo TRIAC (interruptor bidireccional controlado por el latch) ---
+S1  4A  6  LATCH  0  SWMOD
+*
+* --- Modelos internos ---
+.MODEL DMODLED  D(IS=1E-15 N=1.8 RS=2 BV=6)
+.MODEL DCLAMP   D(IS=1E-15 N=1)
+.MODEL SWMOD    SW(RON=5 ROFF=10MEG VT=0.5 VH=0.05)
+*
+.ENDS MOC3041
+* ============================================================================
