@@ -1,0 +1,323 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+********************************************************************************
+**\PYG{+w}{ }Wolfspeed\PYG{+w}{ }SiC\PYG{+w}{ }Schottky\PYG{+w}{ }Diode\PYG{+w}{ }C4D\PYG{+w}{ }Family\PYG{+w}{ }Spice\PYG{+w}{ }Model\PYG{+w}{ }Library
+**\PYG{+w}{     }v1.3
+**\PYG{+w}{ }\PYG{l+m}{01}/26/2018
+********************************************************************************
+**\PYG{+w}{ }Terms:
+**\PYG{+w}{	}
+**\PYG{+w}{ }By\PYG{+w}{ }using\PYG{+w}{ }this\PYG{+w}{ }SPICE\PYG{+w}{ }Model\PYG{+w}{ }\PYG{o}{(}a\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Model\PYGZdq{}}\PYG{o}{)}\PYG{+w}{ }from\PYG{+w}{ }Wolfspeed,\PYG{+w}{ }you\PYG{+w}{ }on
+**\PYG{+w}{ }behalf\PYG{+w}{ }of\PYG{+w}{ }your\PYG{+w}{ }organization\PYG{+w}{ }\PYG{o}{(}or\PYG{+w}{ }you\PYG{+w}{ }personally,\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }you\PYG{+w}{ }are\PYG{+w}{ }requesting\PYG{+w}{ }the
+**\PYG{+w}{ }model\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }personal\PYG{+w}{ }use\PYG{o}{)}\PYG{+w}{ }agree\PYG{+w}{ }to\PYG{+w}{ }the\PYG{+w}{ }following\PYG{+w}{ }conditions\PYG{+w}{ }of\PYG{+w}{ }its\PYG{+w}{ }use:
+**\PYG{+w}{	}
+**\PYG{+w}{ }\PYG{l+m}{1}.\PYG{+w}{ }The\PYG{+w}{ }Model,\PYG{+w}{ }or\PYG{+w}{ }any\PYG{+w}{ }portion\PYG{+w}{ }of\PYG{+w}{ }the\PYG{+w}{ }Model,\PYG{+w}{ }is\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }your\PYG{+w}{ }own\PYG{+w}{ }use\PYG{+w}{ }and\PYG{+w}{ }may\PYG{+w}{ }not
+**\PYG{+w}{ }be\PYG{+w}{ }distributed\PYG{+w}{ }outside\PYG{+w}{ }your\PYG{+w}{ }organization\PYG{+w}{ }\PYG{o}{(}or\PYG{+w}{ }to\PYG{+w}{ }any\PYG{+w}{ }other\PYG{+w}{ }person\PYG{+w}{ }or\PYG{+w}{ }company,
+**\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }you\PYG{+w}{ }are\PYG{+w}{ }acquiring\PYG{+w}{ }the\PYG{+w}{ }Model\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }personal\PYG{+w}{ }use\PYG{o}{)}\PYG{p}{;}
+**\PYG{+w}{	}
+**\PYG{+w}{ }\PYG{l+m}{2}.\PYG{+w}{ }You\PYG{+w}{ }may\PYG{+w}{ }use\PYG{+w}{ }the\PYG{+w}{ }Model\PYG{+w}{ }only\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }the\PYG{+w}{ }purpose\PYG{+w}{ }of\PYG{+w}{ }evaluating\PYG{+w}{ }the\PYG{+w}{ }performance
+**\PYG{+w}{ }of\PYG{+w}{ }Wolfspeed\PYG{+w}{ }products\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }proposed\PYG{+w}{ }circuits\PYG{p}{;}
+**\PYG{+w}{	}
+**\PYG{+w}{ }\PYG{l+m}{3}.\PYG{+w}{ }The\PYG{+w}{ }Model\PYG{+w}{ }is\PYG{+w}{ }provided\PYG{+w}{ }“AS\PYG{+w}{ }IS”,\PYG{+w}{ }and\PYG{+w}{ }Wolfspeed\PYG{+w}{ }disclaims\PYG{+w}{ }any\PYG{+w}{ }warranty\PYG{+w}{ }either
+**\PYG{+w}{ }express\PYG{+w}{ }or\PYG{+w}{ }implied\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }connection\PYG{+w}{ }with\PYG{+w}{ }the\PYG{+w}{ }Model,\PYG{+w}{ }including\PYG{+w}{ }but\PYG{+w}{ }not\PYG{+w}{ }limited
+**\PYG{+w}{ }to\PYG{+w}{ }any\PYG{+w}{ }warranty
+**\PYG{+w}{	}
+**\PYG{+w}{ }\PYG{l+m}{4}.\PYG{+w}{ }In\PYG{+w}{ }no\PYG{+w}{ }event,\PYG{+w}{ }will\PYG{+w}{ }Wolfspeed\PYG{+w}{ }be\PYG{+w}{ }liable\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }any\PYG{+w}{ }damages\PYG{+w}{ }arising\PYG{+w}{ }from\PYG{+w}{ }the\PYG{+w}{ }use
+**\PYG{+w}{ }of\PYG{+w}{ }the\PYG{+w}{ }Model,\PYG{+w}{ }regardless\PYG{+w}{ }of\PYG{+w}{ }the\PYG{+w}{ }legal\PYG{+w}{ }theory\PYG{+w}{ }or\PYG{+w}{ }any\PYG{+w}{ }prior\PYG{+w}{ }knowledge\PYG{+w}{ }of\PYG{+w}{ }Wolfspeed\PYG{p}{;}
+**\PYG{+w}{	}
+**\PYG{+w}{ }\PYG{l+m}{5}.\PYG{+w}{ }Wolfspeed\PYG{+w}{ }retains\PYG{+w}{ }all\PYG{+w}{ }copyrights\PYG{+w}{ }and\PYG{+w}{ }other\PYG{+w}{ }intellectual\PYG{+w}{ }property\PYG{+w}{ }rights\PYG{+w}{ }\PYG{k}{in}
+**\PYG{+w}{ }the\PYG{+w}{ }Model.
+**\PYG{+w}{	}
+********************************************************************************
+********************************************************************************
+**\PYG{+w}{ }Notes:
+**\PYG{+w}{ }\PYG{l+m}{1}.\PYG{+w}{  }The\PYG{+w}{ }model\PYG{+w}{ }is\PYG{+w}{ }designed\PYG{+w}{ }to\PYG{+w}{ }be\PYG{+w}{ }accurate\PYG{+w}{ }over\PYG{+w}{ }the\PYG{+w}{ }ranges\PYG{+w}{ }presented\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }the
+**\PYG{+w}{     }corresponding\PYG{+w}{ }datasheet\PYG{+w}{ }typical\PYG{+w}{ }characteristic\PYG{+w}{ }curves.
+**\PYG{+w}{ }\PYG{l+m}{2}.\PYG{+w}{  }The\PYG{+w}{ }model\PYG{+w}{ }is\PYG{+w}{ }valid\PYG{+w}{ }over\PYG{+w}{ }the\PYG{+w}{ }25C\PYG{+w}{ }to\PYG{+w}{ }175C\PYG{+w}{ }temperature\PYG{+w}{ }range.
+**\PYG{+w}{ }\PYG{l+m}{3}.\PYG{+w}{  }Reverse\PYG{+w}{ }leakage\PYG{+w}{ }currents\PYG{+w}{ }are\PYG{+w}{ }modeled\PYG{+w}{ }as\PYG{+w}{ }a\PYG{+w}{ }breakdown\PYG{+w}{ }voltage\PYG{+w}{ }at\PYG{+w}{ }250uA.
+**\PYG{+w}{     }No\PYG{+w}{ }low\PYG{+w}{ }current\PYG{+w}{ }detail\PYG{+w}{ }is\PYG{+w}{ }provided.
+**\PYG{+w}{ }\PYG{l+m}{4}.\PYG{+w}{  }The\PYG{+w}{ }surge\PYG{+w}{ }response\PYG{+w}{ }of\PYG{+w}{ }the\PYG{+w}{ }PiN\PYG{+w}{ }structure\PYG{+w}{ }is\PYG{+w}{ }not\PYG{+w}{ }included\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }this
+**\PYG{+w}{     }version.
+**\PYG{+w}{ }\PYG{l+m}{5}.\PYG{+w}{  }Recombination\PYG{+w}{ }current\PYG{+w}{ }is\PYG{+w}{ }assumed\PYG{+w}{ }to\PYG{+w}{ }be\PYG{+w}{ }zero.
+**\PYG{+w}{ }\PYG{l+m}{6}.\PYG{+w}{  }Currently,\PYG{+w}{ }the\PYG{+w}{ }model\PYG{+w}{ }is\PYG{+w}{ }electrical\PYG{+w}{ }only.\PYG{+w}{ }No\PYG{+w}{ }thermal\PYG{+w}{ }model\PYG{+w}{ }is\PYG{+w}{ }included.
+**\PYG{+w}{ }\PYG{l+m}{7}.\PYG{+w}{  }LT\PYG{+w}{ }Spice\PYG{+w}{ }users:\PYG{+w}{ }please\PYG{+w}{ }note\PYG{+w}{ }that\PYG{+w}{ }a\PYG{+w}{ }LTSpice\PYG{+w}{ }symbol\PYG{+w}{ }library\PYG{+w}{ }is\PYG{+w}{ }also
+**\PYG{+w}{     }available.\PYG{+w}{ }Please\PYG{+w}{ }refer\PYG{+w}{ }to\PYG{+w}{ }the\PYG{+w}{ }file\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Wolfspeed\PYGZus{}C4D\PYGZus{}CPW4\PYGZus{}LTSPICE\PYGZus{}Symbols.zip\PYGZdq{}}
+**\PYG{+w}{     }\PYG{k}{for}\PYG{+w}{ }further\PYG{+w}{ }details.
+**
+********************************************************************************
+********************************************************************************
+**\PYG{+w}{ }Release\PYG{+w}{ }\PYG{l+m}{1}.3\PYG{+w}{ }notes
+**\PYG{+w}{ }\PYG{l+m}{1}.\PYG{+w}{  }Added\PYG{+w}{ }all\PYG{+w}{ }new\PYG{+w}{ }TO\PYGZhy{}247\PYGZhy{}2\PYG{+w}{ }packages
+**\PYG{+w}{	}
+********************************************************************************
+********************************************************************************
+**\PYG{+w}{ }Discrete\PYG{+w}{ }Diodes
+********************************************************************************
+********************************************************************************
+**\PYG{+w}{ }TO\PYGZhy{}220\PYGZhy{}2\PYG{+w}{ }package
+********************************************************************************
+
+.subckt\PYG{+w}{ }C4D02120A\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S002B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D05120A\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S005B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D08120A\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S008B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D10120A\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S010B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends
+
+.subckt\PYG{+w}{ }C4D15120A\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S015B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends
+
+.subckt\PYG{+w}{ }C4D20120A\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S020B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends
+
+
+********************************************************************************
+**\PYG{+w}{	}TO\PYGZhy{}252\PYGZhy{}2\PYG{+w}{ }package
+********************************************************************************
+
+.subckt\PYG{+w}{ }C4D02120E\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}6n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S002B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}6n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D05120E\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}6n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S005B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}6n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D08120E\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}6n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S008B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}6n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D10120E\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}6n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S010B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}6n\PYG{+w}{		}
+.ends
+
+
+********************************************************************************
+**\PYG{+w}{	}TO\PYGZhy{}247\PYGZhy{}2\PYG{+w}{ }package
+********************************************************************************
+
+.subckt\PYG{+w}{ }C4D10120H\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S010B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends
+
+.subckt\PYG{+w}{ }C4D15120H\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S015B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends
+
+.subckt\PYG{+w}{ }C4D20120H\PYG{+w}{ }A\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode\PYG{+w}{		}A\PYG{+w}{	}AD\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S020B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends
+
+
+
+********************************************************************************
+**\PYG{+w}{	}TO\PYGZhy{}247\PYGZhy{}3\PYG{+w}{ }package
+********************************************************************************
+
+.subckt\PYG{+w}{ }C4D10120D\PYG{+w}{ }A1\PYG{+w}{ }A2\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode1\PYG{+w}{	}A1\PYG{+w}{	}AD1\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD1\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S005B\PYG{+w}{	}
+L\PYGZus{}anode2\PYG{+w}{	}A2\PYG{+w}{	}AD2\PYG{+w}{	}\PYG{l+m}{6}.5n
+D2\PYG{+w}{		}AD2\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S005B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D15120D\PYG{+w}{ }A1\PYG{+w}{ }A2\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode1\PYG{+w}{	}A1\PYG{+w}{	}AD1\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD1\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S008B\PYG{+w}{	}
+L\PYGZus{}anode2\PYG{+w}{	}A2\PYG{+w}{	}AD2\PYG{+w}{	}\PYG{l+m}{6}.5n
+D2\PYG{+w}{		}AD2\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S008B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n
+.ends\PYG{+w}{	}
+
+.subckt\PYG{+w}{ }C4D20120D\PYG{+w}{ }A1\PYG{+w}{ }A2\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode1\PYG{+w}{	}A1\PYG{+w}{	}AD1\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD1\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S010B\PYG{+w}{	}
+L\PYGZus{}anode2\PYG{+w}{	}A2\PYG{+w}{	}AD2\PYG{+w}{	}\PYG{l+m}{6}.5n
+D2\PYG{+w}{		}AD2\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S010B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D30120D\PYG{+w}{ }A1\PYG{+w}{ }A2\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode1\PYG{+w}{	}A1\PYG{+w}{	}AD1\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD1\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S015B\PYG{+w}{	}
+L\PYGZus{}anode2\PYG{+w}{	}A2\PYG{+w}{	}AD2\PYG{+w}{	}\PYG{l+m}{6}.5n
+D2\PYG{+w}{		}AD2\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S015B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+.subckt\PYG{+w}{ }C4D40120D\PYG{+w}{ }A1\PYG{+w}{ }A2\PYG{+w}{ }K\PYG{+w}{ }Case
+L\PYGZus{}anode1\PYG{+w}{	}A1\PYG{+w}{	}AD1\PYG{+w}{	}\PYG{l+m}{6}.5n
+D1\PYG{+w}{		}AD1\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S020B\PYG{+w}{	}
+L\PYGZus{}anode2\PYG{+w}{	}A2\PYG{+w}{	}AD2\PYG{+w}{	}\PYG{l+m}{6}.5n
+D2\PYG{+w}{		}AD2\PYG{+w}{	}Case\PYG{+w}{	}CPW41200S020B\PYG{+w}{	}
+L\PYGZus{}cathode\PYG{+w}{	}K\PYG{+w}{	}Case\PYG{+w}{	}\PYG{l+m}{6}.5n\PYG{+w}{		}
+.ends
+
+
+********************************************************************************
+
+********************************************************************************
+********************************************************************************
+
+
+********************************************************************************
+**\PYG{+w}{	}Die\PYG{+w}{ }Models
+********************************************************************************
+
+
+.model\PYG{+w}{ }CPW41200S002B\PYG{+w}{			}
++\PYG{+w}{	}d\PYG{o}{(}\PYG{+w}{		}
++\PYG{+w}{	}\PYG{n+nv}{level}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}
++\PYG{+w}{	}\PYG{n+nv}{Is}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{6}.99983E\PYGZhy{}13
++\PYG{+w}{	}\PYG{n+nv}{N}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.320735113
++\PYG{+w}{	}\PYG{n+nv}{Eg}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.251495861
++\PYG{+w}{	}\PYG{n+nv}{xti}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.1
++\PYG{+w}{	}\PYG{n+nv}{Rs}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.207862748
++\PYG{+w}{	}\PYG{n+nv}{trs1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.005385655
++\PYG{+w}{	}\PYG{n+nv}{trs2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.95075E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{Cjo}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.65706E\PYGZhy{}10
++\PYG{+w}{	}\PYG{n+nv}{VJ}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.127534358
++\PYG{+w}{	}\PYG{n+nv}{M}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.458351103
++\PYG{+w}{	}\PYG{n+nv}{bv}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1697}
++\PYG{+w}{	}\PYG{n+nv}{tbv1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.000744794
++\PYG{+w}{	}\PYG{n+nv}{tbv2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}7.92914E\PYGZhy{}06
++\PYG{+w}{	}\PYG{n+nv}{tt}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
++\PYG{+w}{	}\PYG{o}{)}\PYG{+w}{		}
+\PYG{+w}{		}
+
+.model\PYG{+w}{ }CPW41200S005B
++\PYG{+w}{	}d\PYG{o}{(}\PYG{+w}{		}
++\PYG{+w}{	}\PYG{n+nv}{level}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}
++\PYG{+w}{	}\PYG{n+nv}{Is}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{5}.90598E\PYGZhy{}14
++\PYG{+w}{	}\PYG{n+nv}{N}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.178186661
++\PYG{+w}{	}\PYG{n+nv}{Eg}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.043467419
++\PYG{+w}{	}\PYG{n+nv}{xti}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{7}.950669626
++\PYG{+w}{	}\PYG{n+nv}{Rs}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.098142507
++\PYG{+w}{	}\PYG{n+nv}{trs1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.004297495
++\PYG{+w}{	}\PYG{n+nv}{trs2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.59929E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{Cjo}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{4}.05432E\PYGZhy{}10
++\PYG{+w}{	}\PYG{n+nv}{VJ}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.114512
++\PYG{+w}{	}\PYG{n+nv}{M}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.467955771
++\PYG{+w}{	}\PYG{n+nv}{bv}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1639}.597225
++\PYG{+w}{	}\PYG{n+nv}{tbv1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}0.00013199
++\PYG{+w}{	}\PYG{n+nv}{tbv2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}4.71787E\PYGZhy{}06
++\PYG{+w}{	}\PYG{n+nv}{tt}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
++\PYG{+w}{	}\PYG{o}{)}\PYG{+w}{		}
+\PYG{+w}{		}
+
+.model\PYG{+w}{ }CPW41200S008B
++\PYG{+w}{	}d\PYG{o}{(}\PYG{+w}{		}
++\PYG{+w}{	}\PYG{n+nv}{level}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}
++\PYG{+w}{	}\PYG{n+nv}{Is}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.92494E\PYGZhy{}14
++\PYG{+w}{	}\PYG{n+nv}{N}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.11594604
++\PYG{+w}{	}\PYG{n+nv}{Eg}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.035085337
++\PYG{+w}{	}\PYG{n+nv}{xti}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{8}.055126484
++\PYG{+w}{	}\PYG{n+nv}{Rs}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.077114784
++\PYG{+w}{	}\PYG{n+nv}{trs1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.004446064
++\PYG{+w}{	}\PYG{n+nv}{trs2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{3}.01628E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{Cjo}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{5}.56085E\PYGZhy{}10
++\PYG{+w}{	}\PYG{n+nv}{VJ}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.441868153
++\PYG{+w}{	}\PYG{n+nv}{M}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.487814696
++\PYG{+w}{	}\PYG{n+nv}{bv}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1566}
++\PYG{+w}{	}\PYG{n+nv}{tbv1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.000611407
++\PYG{+w}{	}\PYG{n+nv}{tbv2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}6.93579E\PYGZhy{}06
++\PYG{+w}{	}\PYG{n+nv}{tt}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
++\PYG{+w}{	}\PYG{o}{)}\PYG{+w}{		}
+
+
+.model\PYG{+w}{ }CPW41200S010B
++\PYG{+w}{	}d\PYG{o}{(}\PYG{+w}{		}
++\PYG{+w}{	}\PYG{n+nv}{level}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}
++\PYG{+w}{	}\PYG{n+nv}{Is}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.87454E\PYGZhy{}12
++\PYG{+w}{	}\PYG{n+nv}{N}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.320015963
++\PYG{+w}{	}\PYG{n+nv}{Eg}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.157943508
++\PYG{+w}{	}\PYG{n+nv}{xti}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{4}.026312737
++\PYG{+w}{	}\PYG{n+nv}{Rs}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.050396905
++\PYG{+w}{	}\PYG{n+nv}{trs1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.005173515
++\PYG{+w}{	}\PYG{n+nv}{trs2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.80776E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{Cjo}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{7}.83471E\PYGZhy{}10
++\PYG{+w}{	}\PYG{n+nv}{VJ}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.130882326
++\PYG{+w}{	}\PYG{n+nv}{M}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.470404256
++\PYG{+w}{	}\PYG{n+nv}{bv}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1591}.862027
++\PYG{+w}{	}\PYG{n+nv}{tbv1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.000157501
++\PYG{+w}{	}\PYG{n+nv}{tbv2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}5.61728E\PYGZhy{}06
++\PYG{+w}{	}\PYG{n+nv}{tt}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
++\PYG{+w}{	}\PYG{o}{)}\PYG{+w}{		}
+
+
+.model\PYG{+w}{ }CPW41200S015B
++\PYG{+w}{	}d\PYG{o}{(}\PYG{+w}{		}
++\PYG{+w}{	}\PYG{n+nv}{level}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}
++\PYG{+w}{	}\PYG{n+nv}{Is}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.05199E\PYGZhy{}13
++\PYG{+w}{	}\PYG{n+nv}{N}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.180245487
++\PYG{+w}{	}\PYG{n+nv}{Eg}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.88047351
++\PYG{+w}{	}\PYG{n+nv}{xti}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{12}.65333425
++\PYG{+w}{	}\PYG{n+nv}{Rs}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.042877267
++\PYG{+w}{	}\PYG{n+nv}{trs1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.004020008
++\PYG{+w}{	}\PYG{n+nv}{trs2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.59515E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{Cjo}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.21052E\PYGZhy{}09
++\PYG{+w}{	}\PYG{n+nv}{VJ}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.083744739
++\PYG{+w}{	}\PYG{n+nv}{M}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.485774559
++\PYG{+w}{	}\PYG{n+nv}{bv}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1577}.656188
++\PYG{+w}{	}\PYG{n+nv}{tbv1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}4.43126E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{tbv2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}7.15079E\PYGZhy{}06
++\PYG{+w}{	}\PYG{n+nv}{tt}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
++\PYG{+w}{	}\PYG{o}{)}\PYG{+w}{		}
+
+
+.model\PYG{+w}{ }CPW41200S020B
++\PYG{+w}{	}d\PYG{o}{(}\PYG{+w}{		}
++\PYG{+w}{	}\PYG{n+nv}{level}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}
++\PYG{+w}{	}\PYG{n+nv}{Is}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{3}.07768E\PYGZhy{}10
++\PYG{+w}{	}\PYG{n+nv}{N}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.583842411
++\PYG{+w}{	}\PYG{n+nv}{Eg}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.1120996
++\PYG{+w}{	}\PYG{n+nv}{xti}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{5}.433552149
++\PYG{+w}{	}\PYG{n+nv}{Rs}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.028252912
++\PYG{+w}{	}\PYG{n+nv}{trs1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.005793999
++\PYG{+w}{	}\PYG{n+nv}{trs2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.29807E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{Cjo}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.54979E\PYGZhy{}09
++\PYG{+w}{	}\PYG{n+nv}{VJ}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1}.102078536
++\PYG{+w}{	}\PYG{n+nv}{M}\PYG{+w}{     }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.472648604
++\PYG{+w}{	}\PYG{n+nv}{bv}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{1515}
++\PYG{+w}{	}\PYG{n+nv}{tbv1}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.001073165
++\PYG{+w}{	}\PYG{n+nv}{tbv2}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}1.10208E\PYGZhy{}05
++\PYG{+w}{	}\PYG{n+nv}{tt}\PYG{+w}{    }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}
++\PYG{+w}{	}\PYG{o}{)}\PYG{+w}{		}
+\end{MintedVerbatim}

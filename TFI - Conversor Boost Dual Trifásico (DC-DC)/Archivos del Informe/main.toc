@@ -1,0 +1,22 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Desarrollo}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Marco Teórico}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Análisis del Convertidor Boost Monofásico}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Ecuaciones de Diseño}{5}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Diseño del Conversor Boost Dual Trifásico}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Calculo de una rama Boost Monofásico}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Selección de Componentes}{10}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Simulación del Convertidor Boost Monofásico}{13}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Simulación del Convertidor Boost Dual Trifásico}{16}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Diseño del Circuito de Control}{20}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Elección y Calculo del Circuito de Control}{20}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Simulación del Circuito de Control con el Boost Monofásico}{20}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Simulación Integradora y Análisis de Resultados}{22}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Conclusiones}{23}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Conclusiones Técnicas}{23}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Conclusiones Personales}{24}{subsection.3.2}%
+\contentsline {section}{4. \ Bibliografía}{25}{section*.21}%
+\contentsline {section}{\numberline {A}Modelo de LTSpice del Wolfspeed C4D20120D}{27}{section.A}%
+\contentsline {section}{\numberline {B}Modelo de LTSpice del Wolfspeed C3M0016120K}{35}{section.B}%
+\contentsline {section}{\numberline {C}Elección de LTSpice como Simulador de Circuitos}{41}{section.C}%

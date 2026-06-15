@@ -1,0 +1,229 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+**************************************************************************************************************************************************************************************************
+*
+*\PYG{+w}{     }\PYG{l+m}{888888}\PYG{+w}{               }\PYG{l+m}{888888}\PYG{+w}{ 	        }\PYG{l+m}{888888}\PYG{+w}{     }.o888888888888o.\PYG{+w}{     }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{88888888888}\PYG{+w}{	}o888888888888888\PYG{+w}{     }88888888888888o\PYG{+w}{	}\PYG{l+m}{88888888888}\PYG{+w}{   }\PYG{l+m}{88888888888}\PYG{+w}{   }8888888888o
+*\PYG{+w}{       }\PYG{l+m}{88888}\PYG{+w}{             }\PYG{l+m}{88888888}\PYG{+w}{             }\PYG{l+m}{88888}\PYG{+w}{      }.8888888\PYG{+w}{  }\PYG{l+m}{8888888}.\PYG{+w}{    }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{88888888888}\PYG{+w}{    }o8888888888888888\PYG{+w}{     }\PYG{l+m}{888888}\PYG{+w}{  }8888888o\PYG{+w}{	}\PYG{l+m}{88888888888}\PYG{+w}{   }\PYG{l+m}{88888888888}\PYG{+w}{   }88888888888o
+*\PYG{+w}{        }\PYG{l+m}{88888}\PYG{+w}{           }\PYG{l+m}{8888}\PYG{+w}{  }\PYG{l+m}{8888}\PYG{+w}{           }\PYG{l+m}{88888}\PYG{+w}{      }.8888888.\PYG{+w}{  }.8888888.\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{8888}\PYG{+w}{	       }\PYG{l+m}{888888888}\PYG{+w}{	     }\PYG{l+m}{888888}\PYG{+w}{  }\PYG{l+m}{88888888}\PYG{+w}{	}\PYG{l+m}{8888}\PYG{+w}{	      }\PYG{l+m}{8888}\PYG{+w}{	    }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}
+*\PYG{+w}{         }\PYG{l+m}{88888}\PYG{+w}{         }\PYG{l+m}{8888}\PYG{+w}{    }\PYG{l+m}{8888}\PYG{+w}{         }\PYG{l+m}{88888}\PYG{+w}{       }\PYG{l+m}{88888888}\PYG{+w}{    }\PYG{l+m}{88888888}\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{		}\PYG{l+m}{8888}\PYG{+w}{   	       }\PYG{l+m}{888888888}\PYG{+w}{	     }\PYG{l+m}{888888}\PYG{+w}{  }\PYG{l+m}{88888888}\PYG{+w}{	}\PYG{l+m}{8888}\PYG{+w}{	      }\PYG{l+m}{8888}\PYG{+w}{	    }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}
+*\PYG{+w}{	   }\PYG{l+m}{88888}\PYG{+w}{       }\PYG{l+m}{8888}\PYG{+w}{      }\PYG{l+m}{8888}\PYG{+w}{       }\PYG{l+m}{88888}\PYG{+w}{        }\PYG{l+m}{88888888}\PYG{+w}{    }\PYG{l+m}{88888888}\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{8888888}\PYG{+w}{	       }o888888888888888o\PYG{+w}{     }\PYG{l+m}{888888}\PYG{+w}{  }8888888o\PYG{+w}{	}\PYG{l+m}{8888888}\PYG{+w}{	      }\PYG{l+m}{8888888}\PYG{+w}{	    }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}
+*\PYG{+w}{	    }\PYG{l+m}{88888}\PYG{+w}{     }\PYG{l+m}{8888}\PYG{+w}{        }\PYG{l+m}{8888}\PYG{+w}{     }\PYG{l+m}{88888}\PYG{+w}{	 }\PYG{l+m}{88888888}\PYG{+w}{    }\PYG{l+m}{88888888}\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{8888888}\PYG{+w}{		}o888888888888888o\PYG{+w}{    }88888888888888o\PYG{+w}{	}\PYG{l+m}{8888888}\PYG{+w}{	      }\PYG{l+m}{8888888}\PYG{+w}{       }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}
+*\PYG{+w}{	     }\PYG{l+m}{88888}\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{          }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}\PYG{+w}{          }\PYG{l+m}{88888888}\PYG{+w}{    }\PYG{l+m}{88888888}\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{8888}\PYG{+w}{		         }\PYG{l+m}{88888888}\PYG{+w}{    }\PYG{l+m}{8888}\PYG{+w}{		}\PYG{l+m}{8888}\PYG{+w}{	      }\PYG{l+m}{8888}\PYG{+w}{	    }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}
+*\PYG{+w}{	      }\PYG{l+m}{88888}\PYG{+w}{ }\PYG{l+m}{8888}\PYG{+w}{            }\PYG{l+m}{8888}\PYG{+w}{ }\PYG{l+m}{88888}\PYG{+w}{  	 }.8888888.\PYG{+w}{  }.8888888.\PYG{+w}{   }\PYG{l+m}{8888}\PYG{+w}{  		}\PYG{l+m}{8888}\PYG{+w}{ 			 }\PYG{l+m}{88888888}\PYG{+w}{    }\PYG{l+m}{8888}\PYG{+w}{		}\PYG{l+m}{8888}\PYG{+w}{	      }\PYG{l+m}{8888}\PYG{+w}{	    }\PYG{l+m}{8888}\PYG{+w}{   }\PYG{l+m}{88888}
+*\PYG{+w}{	       }\PYG{l+m}{88888888}\PYG{+w}{	 	     }\PYG{l+m}{88888888}\PYG{+w}{		  }.8888888\PYG{+w}{  }\PYG{l+m}{8888888}.\PYG{+w}{    }\PYG{l+m}{88888888888}\PYG{+w}{	}\PYG{l+m}{8888}\PYG{+w}{		}8888888888888888o\PYG{+w}{    }\PYG{l+m}{8888}\PYG{+w}{		}\PYG{l+m}{88888888888}\PYG{+w}{   }\PYG{l+m}{88888888888}\PYG{+w}{   }88888888888o
+*\PYG{+w}{		}\PYG{l+m}{888888}\PYG{+w}{		      }\PYG{l+m}{888888}\PYG{+w}{  		   }.o888888888888o.\PYG{+w}{     }\PYG{l+m}{88888888888}\PYG{+w}{	}\PYG{l+m}{8888}\PYG{+w}{		}888888888888888o\PYG{+w}{     }\PYG{l+m}{8888}\PYG{+w}{		}\PYG{l+m}{88888888888}\PYG{+w}{   }\PYG{l+m}{88888888888}\PYG{+w}{   }8888888888o
+*
+*****************************************************************************************************************************************************************************************
+**\PYG{+w}{ }DISCLAIMER
+********************************************************************************
+**\PYG{+w}{ }This\PYG{+w}{ }model\PYG{+w}{ }is\PYG{+w}{ }provided\PYG{+w}{ }as\PYG{+w}{ }is,\PYG{+w}{ }where\PYG{+w}{ }is,\PYG{+w}{ }and\PYG{+w}{ }with\PYG{+w}{ }no\PYG{+w}{ }warranty\PYG{+w}{ }of\PYG{+w}{ }any\PYG{+w}{ }kind
+**\PYG{+w}{ }either\PYG{+w}{ }expressed\PYG{+w}{ }or\PYG{+w}{ }implied,\PYG{+w}{ }including\PYG{+w}{ }but\PYG{+w}{ }not\PYG{+w}{ }limited\PYG{+w}{ }to\PYG{+w}{ }any\PYG{+w}{ }implied
+**\PYG{+w}{ }warranties\PYG{+w}{ }of\PYG{+w}{ }merchantability\PYG{+w}{ }and\PYG{+w}{ }fitness\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }a\PYG{+w}{ }particular\PYG{+w}{ }purpose.
+********************************************************************************
+
+********************************************************************************
+**\PYG{+w}{ }Wolfspeed\PYG{+w}{ }SiC\PYG{+w}{ }MOSFET\PYG{+w}{ }C3M0016120K\PYG{+w}{ }Spice\PYG{+w}{ }Library
+**\PYG{+w}{ }Revision\PYG{+w}{ }\PYG{l+m}{1}.0\PYG{+w}{ }Date:\PYG{+w}{ }\PYG{l+m}{05}\PYGZhy{}17\PYGZhy{}2019
+**\PYG{+w}{ }Revision\PYG{+w}{ }\PYG{l+m}{2}.0\PYG{+w}{ }Date:\PYG{+w}{ }\PYG{l+m}{11}\PYGZhy{}12\PYGZhy{}2019
+**\PYG{+w}{ }Revision\PYG{+w}{ }\PYG{l+m}{3}.0\PYG{+w}{ }Date:\PYG{+w}{ }\PYG{l+m}{08}\PYGZhy{}12\PYGZhy{}2021
+********************************************************************************
+**\PYG{+w}{ }Revision\PYG{+w}{ }record
+**\PYG{+w}{ }Revision\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }Initial\PYG{+w}{ }Release,\PYG{+w}{ }Rev\PYG{+w}{ }\PYG{l+m}{04}\PYGZhy{}2019
+**\PYG{+w}{ }Revision\PYG{+w}{ }\PYG{l+m}{2}\PYG{+w}{ }Improved\PYG{+w}{ }the\PYG{+w}{ }accuracy\PYG{+w}{ }of\PYG{+w}{ }the\PYG{+w}{ }IV\PYG{+w}{ }curves
+**\PYG{+w}{ }Revision\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }Improved\PYG{+w}{ }dynamic\PYG{+w}{ }performance\PYG{+w}{ }and\PYG{+w}{ }updated\PYG{+w}{ }parasitic\PYG{+w}{ }inductance
+********************************************************************************
+**\PYG{+w}{ }Parasitics\PYG{+w}{ }Included
+**\PYG{+w}{ }\PYG{n+nv}{Tj}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }Junction\PYG{+w}{ }Temperature
+**\PYG{+w}{ }\PYG{n+nv}{Tc}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }Case\PYG{+w}{ }Temperature
+**\PYG{+w}{ }\PYG{n+nv}{D}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }Drain
+**\PYG{+w}{ }\PYG{n+nv}{G}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }Gate
+**\PYG{+w}{ }\PYG{n+nv}{S1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }Kelvin\PYG{+w}{ }Source
+**\PYG{+w}{ }\PYG{n+nv}{S2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }Power\PYG{+w}{ }Source
+********************************************************************************
+
+.subckt\PYG{+w}{ }C3M0016120K\PYG{+w}{ }d\PYG{+w}{ }g\PYG{+w}{ }s1\PYG{+w}{ }s2\PYG{+w}{ }Tj\PYG{+w}{ }Tc
+.param\PYG{+w}{ }\PYG{n+nv}{p11}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYGZhy{}8
+.param\PYG{+w}{ }\PYG{n+nv}{p12}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{19}
+.param\PYG{+w}{ }\PYG{n+nv}{Rgint}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{2}.6
+
+R1022\PYG{+w}{ }Tjc\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+E1022\PYG{+w}{ }Tjc\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}limit\PYG{o}{(}v\PYG{o}{(}Tj\PYG{o}{)},\PYGZhy{}40,260\PYG{o}{)\PYGZcb{}}
+
+R100\PYG{+w}{ }gk\PYG{+w}{ }s\PYG{+w}{ }1E6
+E100\PYG{+w}{ }gk\PYG{+w}{ }s\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}limit\PYG{o}{(}v\PYG{o}{(}g1,s\PYG{o}{)},\PYGZhy{}8,19\PYG{o}{)\PYGZcb{}}
+
+e33\PYG{+w}{ }NET3\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}Limit\PYG{o}{(}\PYGZhy{}93.938n*V\PYG{o}{(}Tjc\PYG{o}{)}**3+27.548u*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}5.5921m*V\PYG{o}{(}Tjc\PYG{o}{)}+
++\PYG{+w}{                 }\PYG{l+m}{2}.6741,\PYGZhy{}1,3.5\PYG{o}{)\PYGZcb{}}
+R\PYGZus{}cc\PYG{+w}{ }NET3\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+xgmos\PYG{+w}{ }d3\PYG{+w}{ }d1\PYG{+w}{ }gk\PYG{+w}{ }s\PYG{+w}{ }Tjc\PYG{+w}{ }NET3\PYG{+w}{ }gmos\PYGZus{}C3M0016120K
+
+Ls1\PYG{+w}{ }s1\PYG{+w}{ }sv\PYG{+w}{ }\PYG{l+m}{5}.17n\PYG{+w}{ }\PYG{n+nv}{Rser}\PYG{o}{=}\PYG{l+m}{8}.4m
+R\PYGZus{}Ls1\PYG{+w}{ }s1\PYG{+w}{ }sv\PYG{+w}{ }\PYG{l+m}{100}
+
+Ls2\PYG{+w}{ }s2\PYG{+w}{ }sv\PYG{+w}{ }\PYG{l+m}{2}.3n\PYG{+w}{ }\PYG{n+nv}{Rser}\PYG{o}{=}\PYG{l+m}{0}.73m
+R\PYGZus{}Ls2\PYG{+w}{ }s2\PYG{+w}{ }sv\PYG{+w}{ }\PYG{l+m}{100}
+
+Rv\PYG{+w}{ }sv\PYG{+w}{ }s\PYG{+w}{ }\PYG{l+m}{100}
+Lv\PYG{+w}{ }sv\PYG{+w}{ }s\PYG{+w}{ }\PYG{l+m}{0}.7n\PYG{+w}{ }\PYG{n+nv}{Rser}\PYG{o}{=}\PYG{l+m}{0}
+
+R\PYGZus{}gg\PYG{+w}{ }g1\PYG{+w}{ }s\PYG{+w}{ }1E6
+R\PYGZus{}g\PYG{+w}{ }g1\PYG{+w}{ }g2\PYG{+w}{ }\PYG{o}{\PYGZob{}}Rgint\PYG{o}{\PYGZcb{}}
+Lg\PYG{+w}{ }g\PYG{+w}{ }g2\PYG{+w}{ }\PYG{l+m}{7}.7n\PYG{+w}{ }\PYG{n+nv}{Rser}\PYG{o}{=}\PYG{l+m}{13}.8048m
+R\PYGZus{}Lg\PYG{+w}{ }g\PYG{+w}{ }g2\PYG{+w}{ }\PYG{l+m}{100}
+
+Ld\PYG{+w}{ }d\PYG{+w}{ }d3\PYG{+w}{ }\PYG{l+m}{4}.366n\PYG{+w}{ }\PYG{n+nv}{Rser}\PYG{o}{=}\PYG{l+m}{0}.0874m
+R\PYGZus{}Ld\PYG{+w}{ }d\PYG{+w}{ }d3\PYG{+w}{ }\PYG{l+m}{8}
+
+Ed\PYG{+w}{ }Id\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}I\PYG{o}{(}Vdrain\PYGZus{}s\PYG{o}{)\PYGZcb{}}
+Rdd\PYG{+w}{ }Id\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+vdrain\PYGZus{}s\PYG{+w}{ }d3\PYG{+w}{ }d1\PYG{+w}{ }\PYG{l+m}{0}
+Gheat\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Tj\PYG{+w}{ }\PYG{n+nv}{value}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZob{}}abs\PYG{o}{((}V\PYG{o}{(}d1,s\PYG{o}{)}*v\PYG{o}{(}Id\PYG{o}{)))}+abs\PYG{o}{((}V\PYG{o}{(}g1,g2\PYG{o}{)}**2/Rgint\PYG{o}{))\PYGZcb{}}
+
+xCGD\PYG{+w}{ }d3\PYG{+w}{ }g1\PYG{+w}{ }cgdmos\PYGZus{}C3M0016120K
+*CGS\PYG{+w}{ }g1\PYG{+w}{ }s\PYG{+w}{ }6072p
+CGS\PYG{+w}{ }g1\PYG{+w}{ }s\PYG{+w}{ }6120p
+xCDS\PYG{+w}{ }d3\PYG{+w}{ }s\PYG{+w}{ }cds\PYGZus{}C3M0016120K
+
+R15\PYG{+w}{ }dd12\PYG{+w}{ }d1\PYG{+w}{ }1E6
+e15\PYG{+w}{ }dd12\PYG{+w}{ }d1\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}
++\PYG{+w}{       }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}V\PYG{o}{(}gk,s\PYG{o}{)}\PYGZgt{}V\PYG{o}{(}NET3\PYG{o}{)},
++\PYG{+w}{       }Limit\PYG{o}{(((}\PYG{l+m}{881}.9u*V\PYG{o}{(}Tjc\PYG{o}{)}**2+89.38m*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}34.9\PYG{o}{)}*\PYG{o}{(}V\PYG{o}{(}gk,s\PYG{o}{)}**3\PYG{o}{)}+
++\PYG{+w}{       }\PYG{o}{(}\PYGZhy{}25.75m*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}2.58*V\PYG{o}{(}Tjc\PYG{o}{)}+993.99\PYG{o}{)}*\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}**2\PYG{o}{)}+
++\PYG{+w}{       }\PYG{o}{(}\PYG{l+m}{0}.16317*V\PYG{o}{(}Tjc\PYG{o}{)}**2+21.0784*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}6210.944\PYG{o}{)}*v\PYG{o}{(}gk,s\PYG{o}{)}+
++\PYG{+w}{       }\PYG{o}{(}\PYGZhy{}0.181*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}45.93*V\PYG{o}{(}Tjc\PYG{o}{)}+7848\PYG{o}{))}/1000,\PYGZhy{}4,20\PYG{o}{)}
++\PYG{+w}{       },
++\PYG{+w}{       }Limit\PYG{o}{(((}328u*V\PYG{o}{(}Tjc\PYG{o}{)}**2+0.1011*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}33.982\PYG{o}{)}*\PYG{o}{(}V\PYG{o}{(}gk,s\PYG{o}{)}**2\PYG{o}{)}+
++\PYG{+w}{       }\PYG{o}{(}\PYG{l+m}{1}.729m*V\PYG{o}{(}Tjc\PYG{o}{)}**2+0.98748*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}413.27\PYG{o}{)}*v\PYG{o}{(}gk,s\PYG{o}{)}+
++\PYG{+w}{       }\PYG{o}{(}\PYG{l+m}{15}.27m*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}4.386*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}949.88\PYG{o}{))}/1000,\PYGZhy{}4,5\PYG{o}{)}
++\PYG{+w}{       }\PYG{o}{)}
++\PYG{o}{\PYGZcb{}}
+vdiode1\PYG{+w}{ }dd12\PYG{+w}{ }dd14\PYG{+w}{ }\PYG{l+m}{0}
+
+Esn1\PYG{+w}{ }net1\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}I\PYG{o}{(}vdiode1\PYG{o}{)\PYGZcb{}}
+Rsn1\PYG{+w}{ }net1\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+D1\PYG{+w}{ }s\PYG{+w}{ }dd14\PYG{+w}{ }bodydiode\PYGZus{}C3M0016120K
+
+CDS1\PYG{+w}{ }d3\PYG{+w}{ }s\PYG{+w}{ }\PYG{l+m}{0}.1p
+CGD1\PYG{+w}{ }g1\PYG{+w}{ }d3\PYG{+w}{ }\PYG{l+m}{0}.01p
+R\PYGZus{}DS1\PYG{+w}{ }d3\PYG{+w}{ }s\PYG{+w}{ }\PYG{l+m}{0}.5G
+
+.model\PYG{+w}{ }bodydiode\PYGZus{}C3M0016120K\PYG{+w}{ }d\PYG{o}{(}\PYG{n+nv}{is}\PYG{o}{=}\PYG{l+m}{0}.88p\PYG{+w}{ }\PYG{n+nv}{bv}\PYG{o}{=}\PYG{l+m}{1590}\PYG{+w}{ }\PYG{n+nv}{n}\PYG{o}{=}\PYG{l+m}{4}.80\PYG{+w}{ }\PYG{n+nv}{T\PYGZus{}abs}\PYG{o}{=}\PYG{l+m}{25}
+\PYG{+w}{                             }+\PYG{+w}{ }\PYG{n+nv}{rs}\PYG{o}{=}\PYG{l+m}{0}.015\PYG{+w}{ }\PYG{n+nv}{Tnom}\PYG{o}{=}\PYG{l+m}{25}\PYG{+w}{ }\PYG{n+nv}{tt}\PYG{o}{=}2n\PYG{+w}{ }\PYG{n+nv}{ibv}\PYG{o}{=}500u\PYG{+w}{ }\PYG{n+nv}{level}\PYG{o}{=}\PYG{l+m}{1}\PYG{o}{)}
+
+R0\PYG{+w}{ }N1\PYG{+w}{ }Tj\PYG{+w}{ }\PYG{l+m}{41}.15m
+R1\PYG{+w}{ }N2\PYG{+w}{ }N1\PYG{+w}{ }\PYG{l+m}{90}.58m
+R2\PYG{+w}{ }N3\PYG{+w}{ }N2\PYG{+w}{ }\PYG{l+m}{47}.43m
+R3\PYG{+w}{ }Tc\PYG{+w}{ }N3\PYG{+w}{ }\PYG{l+m}{91}.1m
+
+C0\PYG{+w}{ }Tj\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{l+m}{2}.803m
+C1\PYG{+w}{ }N1\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{l+m}{16}.49m
+C2\PYG{+w}{ }N2\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{l+m}{42}.52m
+C3\PYG{+w}{ }N3\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }\PYG{l+m}{129}.6m
+
+*eth\PYG{+w}{ }dd12d\PYG{+w}{ }d1\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}\PYG{l+m}{1}.145\PYG{o}{\PYGZcb{}}
+
+.ends\PYG{+w}{ }C3M0016120K
+********************************************************************************
+
+.subckt\PYG{+w}{ }gmos\PYGZus{}C3M0016120K\PYG{+w}{ }d3\PYG{+w}{ }d1\PYG{+w}{ }gk\PYG{+w}{ }s\PYG{+w}{ }Tjc\PYG{+w}{ }NET3
+e1\PYG{+w}{ }NET1\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}\PYG{l+m}{0}.2\PYG{o}{\PYGZcb{}}
+R\PYGZus{}A\PYG{+w}{ }NET1\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+e2\PYG{+w}{ }NET2\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}Limit\PYG{o}{(((}\PYGZhy{}139.1u*V\PYG{o}{(}Tjc\PYG{o}{)}**2+10.05m*V\PYG{o}{(}Tjc\PYG{o}{)}+4.896\PYG{o}{)}*v\PYG{o}{(}gk,s\PYG{o}{)}**2+
++\PYG{+w}{               }\PYG{o}{(}\PYG{l+m}{4}.183m*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}0.4445*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}55.01\PYG{o}{)}*v\PYG{o}{(}gk,s\PYG{o}{)}+
++\PYG{+w}{               }\PYG{o}{(}\PYGZhy{}30.04m*V\PYG{o}{(}Tjc\PYG{o}{)}**2+4.052*V\PYG{o}{(}Tjc\PYG{o}{)}+450.7\PYG{o}{))}/
++\PYG{+w}{               }\PYG{l+m}{1000},0.01,2\PYG{o}{)}
++\PYG{+w}{               }\PYG{o}{\PYGZcb{}}
+R\PYGZus{}B\PYG{+w}{ }NET2\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+e4\PYG{+w}{ }NET4\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}Limit\PYG{o}{(((}\PYG{l+m}{968}.4u*V\PYG{o}{(}Tjc\PYG{o}{)}**2+32.99m*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}6.2299\PYG{o}{)}*\PYG{o}{(}V\PYG{o}{(}gr\PYG{o}{)}**2\PYG{o}{)}+
++\PYG{+w}{               }\PYG{o}{(}\PYGZhy{}22.807m*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}0.8652*V\PYG{o}{(}Tjc\PYG{o}{)}+111.88\PYG{o}{)}*v\PYG{o}{(}gr\PYG{o}{)}+
++\PYG{+w}{               }\PYG{o}{(}\PYG{l+m}{0}.12453*V\PYG{o}{(}Tjc\PYG{o}{)}**2+5.5603*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}276.84\PYG{o}{))}/1000,0,5\PYG{o}{)}
++\PYG{+w}{               }\PYG{o}{\PYGZcb{}}
+R\PYGZus{}d\PYG{+w}{ }NET4\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+*e99\PYG{+w}{ }P99\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}\PYG{l+m}{0}.02\PYG{o}{\PYGZcb{}}
+e9\PYG{+w}{ }P9\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}Limit\PYG{o}{(((}\PYGZhy{}512.15u*V\PYG{o}{(}Tjc\PYG{o}{)}**2+0.16216*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}5.694\PYG{o}{)}*\PYG{o}{(}V\PYG{o}{(}gr\PYG{o}{)}**2\PYG{o}{)}+
++\PYG{+w}{             }\PYG{o}{(}\PYG{l+m}{10}.273m*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}3.4705*V\PYG{o}{(}Tjc\PYG{o}{)}+109.74\PYG{o}{)}*v\PYG{o}{(}gr\PYG{o}{)}+
++\PYG{+w}{             }\PYG{o}{(}\PYGZhy{}37.963m*V\PYG{o}{(}Tjc\PYG{o}{)}**2+14.846*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}245.42\PYG{o}{))}/1000,0.001,3\PYG{o}{)}
++\PYG{+w}{             }\PYG{o}{\PYGZcb{}}
+R9\PYG{+w}{ }P9\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+*e6\PYG{+w}{ }NET6\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}\PYG{l+m}{1}.5\PYG{o}{\PYGZcb{}}
+e5\PYG{+w}{ }NET5\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}Limit\PYG{o}{(((}\PYG{l+m}{1}.062u*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}360.348u*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}31.169m\PYG{o}{)}*V\PYG{o}{(}gk,s\PYG{o}{)}**4+
++\PYG{+w}{               }\PYG{o}{(}\PYGZhy{}62.037u*V\PYG{o}{(}Tjc\PYG{o}{)}**2+16.3645m*V\PYG{o}{(}Tjc\PYG{o}{)}+2.2536\PYG{o}{)}*V\PYG{o}{(}gk,s\PYG{o}{)}**3+
++\PYG{+w}{               }\PYG{o}{(}\PYG{l+m}{1}.27528m*V\PYG{o}{(}Tjc\PYG{o}{)}**2\PYGZhy{}0.22406*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}54.823\PYG{o}{)}*V\PYG{o}{(}gk,s\PYG{o}{)}**2+
++\PYG{+w}{               }\PYG{o}{(}\PYGZhy{}10.06m*V\PYG{o}{(}Tjc\PYG{o}{)}**2+0.5774*V\PYG{o}{(}Tjc\PYG{o}{)}+490.499\PYG{o}{)}*v\PYG{o}{(}gk,s\PYG{o}{)}+
++\PYG{+w}{               }\PYG{o}{(}\PYG{l+m}{17}.488m*V\PYG{o}{(}Tjc\PYG{o}{)}**2+4.4632*V\PYG{o}{(}Tjc\PYG{o}{)}\PYGZhy{}801.713\PYG{o}{))}/1000,0.01,3\PYG{o}{)}
++\PYG{+w}{               }\PYG{o}{\PYGZcb{}}
+R\PYGZus{}e\PYG{+w}{ }NET5\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+e10\PYG{+w}{ }NET10\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}\PYG{l+m}{0}.2\PYG{o}{\PYGZcb{}}
+R\PYGZus{}K\PYG{+w}{ }NET10\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+R1001\PYG{+w}{ }gr\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+E1001\PYG{+w}{ }gr\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}limit\PYG{o}{(}V\PYG{o}{(}gk,s\PYG{o}{)},\PYGZhy{}8,15\PYG{o}{)\PYGZcb{}}
+
+e\PYGZus{}P8\PYG{+w}{ }P8\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{o}{\PYGZob{}}Limit\PYG{o}{((}\PYGZhy{}613n*V\PYG{o}{(}gk,s\PYG{o}{)}**4+25.39u*V\PYG{o}{(}gk,s\PYG{o}{)}**3\PYGZhy{}
++\PYG{+w}{               }332u*V\PYG{o}{(}gk,s\PYG{o}{)}**2+1.726m*V\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}1.502m\PYG{o}{)}*0.9,0.0001,0.1\PYG{o}{)}
++\PYG{+w}{               }\PYG{o}{\PYGZcb{}}
+R\PYGZus{}R\PYG{+w}{ }P8\PYG{+w}{ }\PYG{l+m}{0}\PYG{+w}{ }1E6
+
+********************************************************************************
+G2\PYG{+w}{ }d1\PYG{+w}{ }s\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}
++\PYG{+w}{   }\PYG{k}{if}\PYG{o}{(}V\PYG{o}{(}d3,s\PYG{o}{)}\PYGZlt{}\PYG{o}{=}\PYG{l+m}{0},
++\PYG{+w}{       }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}V\PYG{o}{(}gk,s\PYG{o}{)}\PYGZlt{}V\PYG{o}{(}NET3\PYG{o}{)},
++\PYG{+w}{       }\PYG{l+m}{0}
++\PYG{+w}{       },
++\PYG{+w}{       }\PYGZhy{}\PYG{o}{((((}v\PYG{o}{(}NET5\PYG{o}{)}+v\PYG{o}{(}NET4\PYG{o}{))}*\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}V\PYG{o}{(}NET3\PYG{o}{))))}*\PYG{o}{(}\PYG{l+m}{1}+v\PYG{o}{(}P9\PYG{o}{)}*v\PYG{o}{(}s,d3\PYG{o}{))}*
++\PYG{+w}{       }\PYG{o}{(((}log\PYG{o}{(}\PYG{l+m}{1}+exp\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}V\PYG{o}{(}NET3\PYG{o}{))))}**2\PYG{o}{)}\PYGZhy{}\PYG{+w}{ }\PYG{o}{((}log\PYG{o}{(}\PYG{l+m}{1}+exp\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}V\PYG{o}{(}NET3\PYG{o}{)}\PYGZhy{}
++\PYG{+w}{       }\PYG{o}{(}V\PYG{o}{(}NET2\PYG{o}{)}*v\PYG{o}{(}s,d3\PYG{o}{)}*\PYG{o}{((}\PYG{l+m}{1}+exp\PYG{o}{(}\PYGZhy{}v\PYG{o}{(}NET10\PYG{o}{)}*v\PYG{o}{(}s,d3\PYG{o}{)))}**v\PYG{o}{(}NET1\PYG{o}{))))))}**2\PYG{o}{)))}
++\PYG{+w}{       }*1
++\PYG{+w}{       }\PYG{o}{)}
++\PYG{+w}{       },
++\PYG{+w}{       }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}V\PYG{o}{(}gk,s\PYG{o}{)}\PYGZlt{}V\PYG{o}{(}NET3\PYG{o}{)},
++\PYG{+w}{       }\PYG{l+m}{0}
++\PYG{+w}{       },
++\PYG{+w}{       }\PYG{o}{((((}v\PYG{o}{(}NET5\PYG{o}{))}*\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}V\PYG{o}{(}NET3\PYG{o}{))))}*\PYG{o}{(}\PYG{l+m}{1}+v\PYG{o}{(}P8\PYG{o}{)}*v\PYG{o}{(}d3,s\PYG{o}{))}*\PYG{o}{(((}log\PYG{o}{(}\PYG{l+m}{1}+
++\PYG{+w}{       }exp\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}V\PYG{o}{(}NET3\PYG{o}{))))}**2\PYG{o}{)}\PYGZhy{}\PYG{o}{((}log\PYG{o}{(}\PYG{l+m}{1}+exp\PYG{o}{(}v\PYG{o}{(}gk,s\PYG{o}{)}\PYGZhy{}V\PYG{o}{(}NET3\PYG{o}{)}\PYGZhy{}
++\PYG{+w}{       }\PYG{o}{(}V\PYG{o}{(}NET2\PYG{o}{)}*v\PYG{o}{(}d3,s\PYG{o}{)}*\PYG{o}{((}\PYG{l+m}{1}+exp\PYG{o}{(}\PYGZhy{}v\PYG{o}{(}NET10\PYG{o}{)}*v\PYG{o}{(}d3,s\PYG{o}{)))}**v\PYG{o}{(}NET1\PYG{o}{))))))}**2\PYG{o}{)))}
++\PYG{+w}{       }*1
++\PYG{+w}{       }\PYG{o}{)}
++\PYG{+w}{   }\PYG{o}{)}
++\PYG{+w}{   }\PYG{o}{\PYGZcb{}}
+
+.ends\PYG{+w}{ }gmos\PYGZus{}C3M0016120K
+********************************************************************************
+
+********************************************************************************
+.subckt\PYG{+w}{ }cgdmos\PYGZus{}C3M0016120K\PYG{+w}{ }d3\PYG{+w}{ }g1
+.param\PYG{+w}{ }\PYG{n+nv}{k1}\PYG{o}{=}2565p
+.param\PYG{+w}{ }\PYG{n+nv}{k2}\PYG{o}{=}\PYG{l+m}{0}.5
+.param\PYG{+w}{ }\PYG{n+nv}{ka}\PYG{o}{=}\PYG{l+m}{90}
+.param\PYG{+w}{ }\PYG{n+nv}{kb}\PYG{o}{=}\PYG{l+m}{0}.3
+.param\PYG{+w}{ }\PYG{n+nv}{kc}\PYG{o}{=}\PYG{l+m}{3}.0
+
+G11\PYG{+w}{ }g1\PYG{+w}{ }d11\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}
++\PYG{+w}{   }k1*\PYG{o}{(}
++\PYG{+w}{      }\PYG{o}{(}\PYG{l+m}{1}+\PYG{o}{(}limit\PYG{o}{(}v\PYG{o}{(}d3,g1\PYG{o}{)},0.1,407\PYG{o}{))}*\PYG{o}{(}\PYG{l+m}{1}+ka*\PYG{o}{(}\PYG{l+m}{1}+TANH\PYG{o}{(}kb*V\PYG{o}{(}d3,g1\PYG{o}{)}\PYGZhy{}kc\PYG{o}{))}/2\PYG{o}{))}**\PYG{o}{(}\PYGZhy{}k2\PYG{o}{)}
++\PYG{+w}{      }\PYG{o}{)}*ddt\PYG{o}{(}v\PYG{o}{(}g1,d11\PYG{o}{))}
++\PYG{+w}{   }\PYG{o}{\PYGZcb{}}
+R\PYGZus{}CGD\PYG{+w}{ }d11\PYG{+w}{ }d3\PYG{+w}{ }1E\PYGZhy{}4
+.ends\PYG{+w}{ }cgdmos\PYGZus{}C3M0016120K
+********************************************************************************
+
+********************************************************************************
+.subckt\PYG{+w}{ }cds\PYGZus{}C3M0016120K\PYG{+w}{ }d3\PYG{+w}{ }s
+.param\PYG{+w}{ }\PYG{n+nv}{Cjo}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }5179p
+.param\PYG{+w}{ }\PYG{n+nv}{Vj}\PYG{+w}{  }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{4}.4365
+.param\PYG{+w}{ }\PYG{n+nv}{M}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m}{0}.643
+
+G12\PYG{+w}{ }d12\PYG{+w}{ }s\PYG{+w}{ }value\PYG{+w}{ }\PYG{o}{\PYGZob{}}
++\PYG{+w}{   }\PYG{o}{(}Cjo/\PYG{o}{(}\PYG{l+m}{1}+\PYG{o}{(}limit\PYG{o}{(}v\PYG{o}{(}d3,s\PYG{o}{)},0.1,580\PYG{o}{)}/Vj\PYG{o}{)}**M\PYG{o}{))}*ddt\PYG{o}{(}v\PYG{o}{(}d12,s\PYG{o}{))}\PYG{p}{;}
++\PYG{+w}{   }\PYG{o}{\PYGZcb{}}
+R\PYGZus{}CDS\PYG{+w}{ }d12\PYG{+w}{ }d3\PYG{+w}{ }1E\PYGZhy{}4
+.ends\PYG{+w}{ }cds\PYGZus{}C3M0016120K
+********************************************************************************
+\end{MintedVerbatim}

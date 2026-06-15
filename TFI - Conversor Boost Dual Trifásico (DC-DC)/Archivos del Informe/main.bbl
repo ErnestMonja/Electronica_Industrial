@@ -1,0 +1,675 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{b1}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=14d6f716c30bd7ce9fd8f2f48fb3169a}{%
+           family={IluminaShop},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{fullhash}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{fullhashraw}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{bibnamehash}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{authorbibnamehash}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{authornamehash}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{authorfullhash}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \strng{authorfullhashraw}{14d6f716c30bd7ce9fd8f2f48fb3169a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Panel solar 545W 41.87V Suntech Tier 1 Monocristalino 144 células PERC}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://iluminashop.com/led-producto/material-electrico/energia-solar-fotovoltaica/paneles-solares-fotovoltaicos/panel-solar-545w-41-87v-suntech-tier-1-monocristalino-144-celulas-perc/
+      \endverb
+      \verb{url}
+      \verb https://iluminashop.com/led-producto/material-electrico/energia-solar-fotovoltaica/paneles-solares-fotovoltaicos/panel-solar-545w-41-87v-suntech-tier-1-monocristalino-144-celulas-perc/
+      \endverb
+    \endentry
+    \entry{b2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=442e9e5861cb0a2d21cce5f66c6fa9bb}{%
+           family={Monte\bibnamedelima Ferrer},
+           familyi={M\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={À.},
+           giveni={À\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Universitat Politècnica de València}%
+      }
+      \strng{namehash}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{fullhash}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{fullhashraw}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{bibnamehash}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{authorbibnamehash}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{authornamehash}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{authorfullhash}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \strng{authorfullhashraw}{442e9e5861cb0a2d21cce5f66c6fa9bb}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Evaluación de convertidores DC-DC para conexión de paneles fotovoltaicos al bus de distribución de continua en microrredes mixtas}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://riunet.upv.es/bitstreams/b265dda9-ebf6-4a25-b8e2-c9138f8b6875/download
+      \endverb
+      \verb{url}
+      \verb https://riunet.upv.es/bitstreams/b265dda9-ebf6-4a25-b8e2-c9138f8b6875/download
+      \endverb
+    \endentry
+    \entry{b3}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=2b9df3470c2be813c1a89fabe9cf4a81}{%
+           family={Mohan},
+           familyi={M\bibinitperiod},
+           given={Ned},
+           giveni={N\bibinitperiod}}}%
+        {{hash=14e04317b160c3524ba9016cccd2c44e}{%
+           family={Undeland},
+           familyi={U\bibinitperiod},
+           given={Tore\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=099138e21a50455a56f58cfbb7ad0c2d}{%
+           family={Robbins},
+           familyi={R\bibinitperiod},
+           given={William\bibnamedelima P.},
+           giveni={W\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{0567289e4b8e418202696b255b0fb19e}
+      \strng{fullhash}{f956a1125100e00f92da68fc297e47e0}
+      \strng{fullhashraw}{f956a1125100e00f92da68fc297e47e0}
+      \strng{bibnamehash}{f956a1125100e00f92da68fc297e47e0}
+      \strng{authorbibnamehash}{f956a1125100e00f92da68fc297e47e0}
+      \strng{authornamehash}{0567289e4b8e418202696b255b0fb19e}
+      \strng{authorfullhash}{f956a1125100e00f92da68fc297e47e0}
+      \strng{authorfullhashraw}{f956a1125100e00f92da68fc297e47e0}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{isbn}{978-0471226932}
+      \field{title}{Power Electronics: Converters, Applications, and Design}
+      \field{year}{2003}
+    \endentry
+    \entry{b4}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7295c85246694adeb9f3bb6e24cf5da8}{%
+           family={Mind},
+           familyi={M\bibinitperiod},
+           given={Electronics},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{fullhash}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{fullhashraw}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{bibnamehash}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{authorbibnamehash}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{authornamehash}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{authorfullhash}{7295c85246694adeb9f3bb6e24cf5da8}
+      \strng{authorfullhashraw}{7295c85246694adeb9f3bb6e24cf5da8}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{title}{Boost Converter – Circuit Diagram, Working \& Waveforms}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://electronicsmind.com/boost-converter/
+      \endverb
+      \verb{url}
+      \verb https://electronicsmind.com/boost-converter/
+      \endverb
+    \endentry
+    \entry{b5}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=f4777f54091e2c95ad63cd93a4295bc5}{%
+           family={Hauke},
+           familyi={H\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Texas Instruments}%
+      }
+      \strng{namehash}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{fullhash}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{fullhashraw}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{bibnamehash}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{authorbibnamehash}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{authornamehash}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{authorfullhash}{f4777f54091e2c95ad63cd93a4295bc5}
+      \strng{authorfullhashraw}{f4777f54091e2c95ad63cd93a4295bc5}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{SLVA372D}
+      \field{title}{Basic Calculation of a Boost Converter's Power Stage}
+      \field{type}{Application Report}
+      \field{urlday}{9}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/an/slva372d/slva372d.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/an/slva372d/slva372d.pdf
+      \endverb
+    \endentry
+    \entry{b6}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7fbac09a4f972a13d70244eff33c0810}{%
+           family={Agüero},
+           familyi={A\bibinitperiod},
+           given={Adrián\bibnamedelima Claudio},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Facultad de Ciencias Exactas, Físicas y Naturales, Universidad Nacional de Córdoba}%
+      }
+      \strng{namehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{fullhash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{fullhashraw}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{bibnamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorbibnamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authornamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorfullhash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorfullhashraw}{7fbac09a4f972a13d70244eff33c0810}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Apunte de cátedra, Electrónica Industrial}
+      \field{note}{Material de soporte didáctico}
+      \field{title}{El MOSFET de Potencia}
+      \field{year}{2026}
+    \endentry
+    \entry{b7}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f36744e795c91bffb639b615975f2d0e}{%
+           family={Gangi},
+           familyi={G\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Facultad de Ciencias Exactas, Físicas y Naturales, Universidad Nacional de Córdoba}%
+      }
+      \strng{namehash}{f36744e795c91bffb639b615975f2d0e}
+      \strng{fullhash}{f36744e795c91bffb639b615975f2d0e}
+      \strng{fullhashraw}{f36744e795c91bffb639b615975f2d0e}
+      \strng{bibnamehash}{f36744e795c91bffb639b615975f2d0e}
+      \strng{authorbibnamehash}{f36744e795c91bffb639b615975f2d0e}
+      \strng{authornamehash}{f36744e795c91bffb639b615975f2d0e}
+      \strng{authorfullhash}{f36744e795c91bffb639b615975f2d0e}
+      \strng{authorfullhashraw}{f36744e795c91bffb639b615975f2d0e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Guía de Trabajos Prácticos, Electrónica Industrial}
+      \field{note}{Material didáctico de cátedra}
+      \field{title}{Diseño de un Rectificador Trifásico de Media Onda con Diodos Semiconductores de Potencia}
+      \field{year}{2026}
+    \endentry
+    \entry{b8}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=2dae49fef960c88bc8ca5b68f135f719}{%
+           family={Erickson},
+           familyi={E\bibinitperiod},
+           given={Robert\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=6d002af87240616ee50fc2c736d8cff6}{%
+           family={Maksimovic},
+           familyi={M\bibinitperiod},
+           given={Dragan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{fullhash}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{fullhashraw}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{bibnamehash}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{authorbibnamehash}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{authornamehash}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{authorfullhash}{0aac01ee481765e2d51f90d232c10a16}
+      \strng{authorfullhashraw}{0aac01ee481765e2d51f90d232c10a16}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Fundamentals of Power Electronics}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1007/978-3-030-43881-4
+      \endverb
+    \endentry
+    \entry{b9}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7fbac09a4f972a13d70244eff33c0810}{%
+           family={Agüero},
+           familyi={A\bibinitperiod},
+           given={Adrián\bibnamedelima Claudio},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Facultad de Ciencias Exactas, Físicas y Naturales, Universidad Nacional de Córdoba}%
+      }
+      \strng{namehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{fullhash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{fullhashraw}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{bibnamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorbibnamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authornamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorfullhash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorfullhashraw}{7fbac09a4f972a13d70244eff33c0810}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Diapositivas de cátedra, Electrónica Industrial}
+      \field{note}{Material didáctico de soporte para clase magistral}
+      \field{title}{Clase 0: Presentación e Introducción a la Electrónica de Potencia}
+      \field{year}{2021}
+    \endentry
+    \entry{b10}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=b164c979f5f9ce6d2ec01aae6c56924f}{%
+           family={Hedy},
+           familyi={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Dasenic}%
+      }
+      \strng{namehash}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{fullhash}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{fullhashraw}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{bibnamehash}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{authorbibnamehash}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{authornamehash}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{authorfullhash}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \strng{authorfullhashraw}{b164c979f5f9ce6d2ec01aae6c56924f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{{IGBT} vs. {MOSFET}: A Comprehensive Comparison of Features}
+      \field{urlday}{10}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.dasenic.com/blog/knowledgeHub/igbt-vs-mosfet-a-comprehensive-comparison-of-features
+      \endverb
+      \verb{url}
+      \verb https://www.dasenic.com/blog/knowledgeHub/igbt-vs-mosfet-a-comprehensive-comparison-of-features
+      \endverb
+    \endentry
+    \entry{b11}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2553b73655b221f089632083ff691ab2}{%
+           family={Lakkas},
+           familyi={L\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Texas Instruments}%
+      }
+      \strng{namehash}{2553b73655b221f089632083ff691ab2}
+      \strng{fullhash}{2553b73655b221f089632083ff691ab2}
+      \strng{fullhashraw}{2553b73655b221f089632083ff691ab2}
+      \strng{bibnamehash}{2553b73655b221f089632083ff691ab2}
+      \strng{authorbibnamehash}{2553b73655b221f089632083ff691ab2}
+      \strng{authornamehash}{2553b73655b221f089632083ff691ab2}
+      \strng{authorfullhash}{2553b73655b221f089632083ff691ab2}
+      \strng{authorfullhashraw}{2553b73655b221f089632083ff691ab2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Analog Applications Journal}
+      \field{title}{{MOSFET} power losses and how they affect power-supply efficiency}
+      \field{urlday}{10}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/an/slyt664/slyt664.pdf?ts=1781291704984
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/an/slyt664/slyt664.pdf?ts=1781291704984
+      \endverb
+    \endentry
+    \entry{b12}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=0badc61e0bfd9f3308e6af5e397caabd}{%
+           family={Arrshith},
+           familyi={A\bibinitperiod},
+           given={R.\bibnamedelimi G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=880c9106576839cfaf00e081149f3618}{%
+           family={Rashmi},
+           familyi={R\bibinitperiod},
+           given={M.\bibnamedelimi R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=9244230e6558e87e23da13235eca537e}{%
+           family={Ramachandaramurthy},
+           familyi={R\bibinitperiod},
+           given={Vigna\bibnamedelima K.},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=972dcc238cbd04bbc8766f07a3f0bfa3}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Hoong\bibnamedelima Pin},
+           giveni={H\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=db321d08766fbd2c894d10cdd78cfd74}{%
+           family={Subramaniam},
+           familyi={S\bibinitperiod},
+           given={Umashankar},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{23eddde852d17cc51b443162d844abc6}
+      \strng{fullhash}{c5bdb9159eb7487f0910013b6dc408d3}
+      \strng{fullhashraw}{c5bdb9159eb7487f0910013b6dc408d3}
+      \strng{bibnamehash}{c5bdb9159eb7487f0910013b6dc408d3}
+      \strng{authorbibnamehash}{c5bdb9159eb7487f0910013b6dc408d3}
+      \strng{authornamehash}{23eddde852d17cc51b443162d844abc6}
+      \strng{authorfullhash}{c5bdb9159eb7487f0910013b6dc408d3}
+      \strng{authorfullhashraw}{c5bdb9159eb7487f0910013b6dc408d3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{SiC MOSFET Based 10 kW Interleaved Boost Converter Interface for Regenerative Power Electronic System}
+      \field{volume}{13}
+      \field{year}{2025}
+      \field{pages}{143440\bibrangedash 143448}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2025.3596903
+      \endverb
+      \keyw{DC-DC power converters;Inductors;MOSFET;Silicon carbide;Power supplies;Switches;Voltage control;High-voltage techniques;Switching loss;Stress;Device under test (DUT);double pulse test;interleaved dc-dc boost converter;peak current mode control (PCMC);thermal imaging}
+    \endentry
+    \entry{b13}{manual}{}{}
+      \list{organization}{1}{%
+        {Wolfspeed}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{Silicon Carbide Power {MOSFET} {C3M0016120K} Datasheet}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://assets.wolfspeed.com/uploads/2024/01/Wolfspeed_C3M0016120K_data_sheet.pdf
+      \endverb
+      \verb{url}
+      \verb https://assets.wolfspeed.com/uploads/2024/01/Wolfspeed_C3M0016120K_data_sheet.pdf
+      \endverb
+    \endentry
+    \entry{b14}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7fbac09a4f972a13d70244eff33c0810}{%
+           family={Agüero},
+           familyi={A\bibinitperiod},
+           given={Adrián\bibnamedelima Claudio},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Facultad de Ciencias Exactas, Físicas y Naturales, Universidad Nacional de Córdoba}%
+      }
+      \strng{namehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{fullhash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{fullhashraw}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{bibnamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorbibnamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authornamehash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorfullhash}{7fbac09a4f972a13d70244eff33c0810}
+      \strng{authorfullhashraw}{7fbac09a4f972a13d70244eff33c0810}
+      \field{extraname}{3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Diapositivas de cátedra, Electrónica Industrial}
+      \field{note}{Material didáctico de soporte para clase magistral}
+      \field{title}{Diodo de Potencia parte 1}
+      \field{year}{2026}
+    \endentry
+    \entry{b15}{manual}{}{}
+      \list{organization}{1}{%
+        {Wolfspeed}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Silicon Carbide Schottky Diode C4D20120D Datasheet}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://assets.wolfspeed.com/uploads/2023/12/Wolfspeed_C4D20120D_data_sheet.pdf
+      \endverb
+      \verb{url}
+      \verb https://assets.wolfspeed.com/uploads/2023/12/Wolfspeed_C4D20120D_data_sheet.pdf
+      \endverb
+    \endentry
+    \entry{b16}{manual}{}{}
+      \list{organization}{1}{%
+        {Motorola Semiconductor Products}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{SG3525: Regulating Pulse Width Modulators Datasheet}
+      \field{urlday}{12}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.alldatasheet.com/datasheet-pdf/view/5632/MOTOROLA/SG3525.html
+      \endverb
+      \verb{url}
+      \verb https://www.alldatasheet.com/datasheet-pdf/view/5632/MOTOROLA/SG3525.html
+      \endverb
+    \endentry
+    \entry{b17}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b4d69c5bcc34b234aa673f3602d8597}{%
+           family={Drexhage},
+           familyi={D\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Semikron Danfoss}%
+      }
+      \strng{namehash}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{fullhash}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{fullhashraw}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{bibnamehash}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{authorbibnamehash}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{authornamehash}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{authorfullhash}{1b4d69c5bcc34b234aa673f3602d8597}
+      \strng{authorfullhashraw}{1b4d69c5bcc34b234aa673f3602d8597}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Gate Driver Basics}
+      \field{type}{Application Note AN 21-002}
+      \field{urlday}{12}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://assets.danfoss.com/documents/latest/444234/AB501643796480en-000201.pdf
+      \endverb
+      \verb{url}
+      \verb https://assets.danfoss.com/documents/latest/444234/AB501643796480en-000201.pdf
+      \endverb
+    \endentry
+    \entry{b18}{manual}{}{}
+      \list{organization}{1}{%
+        {Texas Instruments}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{TMS320F280049C: Real-Time Microcontrollers Datasheet}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.alldatasheet.com/datasheet-pdf/view/1012336/TI1/TMS320F280049C.html
+      \endverb
+      \verb{url}
+      \verb https://www.alldatasheet.com/datasheet-pdf/view/1012336/TI1/TMS320F280049C.html
+      \endverb
+    \endentry
+    \entry{b19}{manual}{}{}
+      \list{organization}{1}{%
+        {Linear Technology}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{LTC4440: High Speed, High Voltage High Side Gate Driver Datasheet}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.alldatasheet.com/datasheet-pdf/view/101984/LINER/LTC4440.html
+      \endverb
+      \verb{url}
+      \verb https://www.alldatasheet.com/datasheet-pdf/view/101984/LINER/LTC4440.html
+      \endverb
+    \endentry
+    \entry{b20}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b27e361b5dd5ddf93257d9a12ebf5fa}{%
+           family={{Wolfspeed}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{fullhash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{fullhashraw}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{bibnamehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authorbibnamehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authornamehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authorfullhash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authorfullhashraw}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{LTspice} and {PLECS} Models for Power Devices}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.wolfspeed.com/tools-and-support/power/ltspice-and-plecs-models/
+      \endverb
+      \verb{url}
+      \verb https://www.wolfspeed.com/tools-and-support/power/ltspice-and-plecs-models/
+      \endverb
+    \endentry
+    \entry{b21}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b27e361b5dd5ddf93257d9a12ebf5fa}{%
+           family={{Wolfspeed}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{fullhash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{fullhashraw}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{bibnamehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authorbibnamehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authornamehash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authorfullhash}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \strng{authorfullhashraw}{1b27e361b5dd5ddf93257d9a12ebf5fa}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{Selecting Between {Wolfspeed}’s Design Tools}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.wolfspeed.com/knowledge-center/article/selecting-between-wolfspeeds-design-tools/
+      \endverb
+      \verb{url}
+      \verb https://www.wolfspeed.com/knowledge-center/article/selecting-between-wolfspeeds-design-tools/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
